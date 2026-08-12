@@ -115,14 +115,6 @@
       "points": 5
     },
     {
-      "id": "matrice_type_decision",
-      "title": "Croisement type de demande × décision",
-      "description": "Nombre de reports pour chaque combinaison type de demande / décision. Se lit en barres empilées : chaque barre est un type, découpé par décision.",
-      "chartType": "bar",
-      "file": "matrice_type_decision.json",
-      "points": 5
-    },
-    {
       "id": "top_serveurs",
       "title": "Top 15 des serveurs par volume de reports",
       "description": "Serveurs d'où proviennent le plus de reports, avec leur taux de blacklist associé. Un fort volume combiné à un faible taux de blacklist peut signaler du sur-signalement.",

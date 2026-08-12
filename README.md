@@ -53,12 +53,10 @@ et jamais recyclés : au-delà de 8 séries, les plus petites sont regroupées s
 
 ## Logo
 
-Le header attend deux fichiers dans `public/` :
+Le header utilise deux fichiers de `public/`, échangés par la variante `dark:` :
 
-- `logo-light.png` — logo sombre, affiché en thème clair
-- `logo-dark.png` — logo clair, affiché en thème sombre
-
-Tant que les deux ne sont pas présents, le header affiche le nom en texte.
+- `logo-light.png` — logo noir (`Sombre.png`), affiché en thème clair
+- `logo-dark.png` — logo blanc (`Clair.png`), affiché en thème sombre
 
 ## Déploiement
 

@@ -145,22 +145,6 @@
       "chartType": "line",
       "file": "acteurs_actifs_par_mois.json",
       "points": 13
-    },
-    {
-      "id": "impact_commentaire",
-      "title": "Effet du commentaire sur l'issue du report",
-      "description": "Part des reports aboutissant à un blacklist, selon qu'ils portent ou non un commentaire.",
-      "chartType": "bar",
-      "file": "impact_commentaire.json",
-      "points": 2
-    },
-    {
-      "id": "completude_donnees",
-      "title": "Complétude des champs",
-      "description": "Part des reports où chaque champ est réellement renseigné.",
-      "chartType": "bar",
-      "file": "completude_donnees.json",
-      "points": 4
     }
   ]
 }

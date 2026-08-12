@@ -139,8 +139,13 @@ export function axisFormatter(xKey: string | undefined) {
   return (value: string) => value
 }
 
+/**
+ * Counts code points, not UTF-16 units: server names use mathematical-bold
+ * letters, and slicing mid-surrogate renders a replacement character.
+ */
 export function truncate(value: string, max: number) {
-  return value.length > max ? `${value.slice(0, max - 1)}…` : value
+  const chars = Array.from(value)
+  return chars.length > max ? `${chars.slice(0, max - 1).join("")}…` : value
 }
 
 /**

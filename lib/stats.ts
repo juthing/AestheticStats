@@ -3,9 +3,7 @@ import acteursActifsParMois from "@/stats/acteurs_actifs_par_mois.json"
 import activiteStaffParMois from "@/stats/activite_staff_par_mois.json"
 import ciblesRecidivistes from "@/stats/cibles_recidivistes.json"
 import classementStaff from "@/stats/classement_staff.json"
-import completudeDonnees from "@/stats/completude_donnees.json"
 import decisionsParStaff from "@/stats/decisions_par_staff.json"
-import impactCommentaire from "@/stats/impact_commentaire.json"
 import motifsBlacklist from "@/stats/motifs_blacklist.json"
 import reportsParHeure from "@/stats/reports_par_heure.json"
 import reportsParJourSemaine from "@/stats/reports_par_jour_semaine.json"
@@ -65,9 +63,7 @@ const registry: Record<string, unknown> = {
   activite_staff_par_mois: activiteStaffParMois,
   cibles_recidivistes: ciblesRecidivistes,
   classement_staff: classementStaff,
-  completude_donnees: completudeDonnees,
   decisions_par_staff: decisionsParStaff,
-  impact_commentaire: impactCommentaire,
   motifs_blacklist: motifsBlacklist,
   reports_par_heure: reportsParHeure,
   reports_par_jour_semaine: reportsParJourSemaine,

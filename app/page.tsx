@@ -1,4 +1,5 @@
 import { ChartCard } from "@/components/chart-card"
+import { DesktopNotice } from "@/components/desktop-notice"
 import { SiteHeader } from "@/components/site-header"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
@@ -20,6 +21,8 @@ export default function Page() {
     <>
       <SiteHeader />
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10 md:px-6 md:py-14">
+        <DesktopNotice />
+
         <section className="flex flex-col gap-2">
           <Badge variant="secondary" className="w-fit">
             Aesthetic Whale

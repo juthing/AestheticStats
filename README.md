@@ -46,6 +46,12 @@ graphique n'est codé en dur. Quelques comportements dérivés des données :
 - un champ `from` optionnel coupe le début d'une série (`"from": "2026-04"`
   ne garde que les semaines à partir de celle-là).
 
+Chaque graphique n'est monté qu'en arrivant dans le champ de vision
+(`components/in-view.tsx`), ce qui déclenche son animation d'apparition au
+scroll ; la place est réservée d'avance par `chartHeight`, donc rien ne saute.
+Sur mobile, un encart signale que la lecture est plus confortable sur grand
+écran ; il se ferme et ne revient pas (`components/desktop-notice.tsx`).
+
 **Pour mettre à jour les stats** : remplacer les fichiers de `stats/`. Un
 nouveau fichier doit être ajouté à `stats/index.json` **et** au registre de
 `lib/stats.ts` (les JSON sont importés statiquement pour être inclus dans le

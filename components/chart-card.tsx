@@ -2,10 +2,8 @@
 
 import * as React from "react"
 
-import { Badge } from "@/components/ui/badge"
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardHeader,
@@ -20,8 +18,9 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { InView } from "@/components/in-view"
 import { StatChart } from "@/components/stat-chart"
-import { formatNumber } from "@/lib/chart-utils"
+import { chartHeight, formatNumber } from "@/lib/chart-utils"
 import type { StatsChart } from "@/lib/stats"
 
 /** Discord snowflakes and other raw ids stay out of the table. */
@@ -49,11 +48,6 @@ export function ChartCard({ chart }: { chart: StatsChart }) {
         <CardDescription className="text-balance">
           {chart.description}
         </CardDescription>
-        <CardAction>
-          <Badge variant="secondary" className="tabular-nums">
-            {chart.data.length} pts
-          </Badge>
-        </CardAction>
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="chart">
@@ -62,7 +56,9 @@ export function ChartCard({ chart }: { chart: StatsChart }) {
             <TabsTrigger value="data">Données</TabsTrigger>
           </TabsList>
           <TabsContent value="chart">
-            <StatChart chart={chart} />
+            <InView minHeight={chartHeight(chart)}>
+              <StatChart chart={chart} />
+            </InView>
           </TabsContent>
           <TabsContent value="data">
             <div className="max-h-[420px] overflow-y-auto rounded-lg border">

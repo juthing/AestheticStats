@@ -72,7 +72,7 @@
     /* Mix target for palette slots past the 8th: always lightens, so a repeat
        reads as a tint of its hue in both themes. */
     --chart-tint: oklch(1 0 0);
-    --chart-1: #2a78d6;
+    --chart-1: #2b7fff;
     --chart-2: #eb6834;
     --chart-3: #1baf7a;
     --chart-4: #eda100;
@@ -110,7 +110,7 @@
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
     --ring: oklch(0.552 0.016 285.938);
-    --chart-1: #3987e5;
+    --chart-1: #2b7fff;
     --chart-2: #d95926;
     --chart-3: #199e70;
     --chart-4: #c98500;

@@ -178,6 +178,30 @@ export function isPercentSeries(series: ChartSeries[] | undefined) {
   return Boolean(series?.every((item) => item.label.includes("%")))
 }
 
+/** Bars with many categories are laid out horizontally so labels stay readable. */
+export const VERTICAL_BAR_THRESHOLD = 12
+
+/**
+ * The rendered height of a chart. Shared with the in-view placeholder so the
+ * reserved space matches what eventually mounts and nothing shifts.
+ */
+export function chartHeight(chart: StatsChart) {
+  const rows = chart.data.length
+  const seriesCount = chart.series?.length ?? 1
+
+  if (chart.chartType === "pie" || chart.chartType === "radar") return 340
+  if (chart.chartType === "area") return 360
+  if (chart.chartType === "line") return 320
+
+  const timeAxis = chart.xKey === "mois" || chart.xKey === "semaine"
+  const vertical =
+    chart.layout === "vertical" ||
+    (!timeAxis && rows > VERTICAL_BAR_THRESHOLD)
+  return vertical
+    ? Math.max(280, rows * (seriesCount > 1 ? 30 : 24) + 80)
+    : 320
+}
+
 /**
  * Recolors the series on the fixed palette and, past MAX_SERIES of them, keeps
  * the largest and sums the rest into a single "Autres" series.

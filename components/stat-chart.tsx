@@ -33,6 +33,7 @@ import {
 } from "@/components/ui/chart"
 import {
   axisFormatter,
+  chartHeight,
   formatNumber,
   formatWeekMonth,
   monthTicks,
@@ -41,12 +42,10 @@ import {
   resolveSeries,
   shortenTick,
   slotColor,
+  VERTICAL_BAR_THRESHOLD,
   tooltipLabelFormatter,
 } from "@/lib/chart-utils"
 import type { ChartSeries, StatsChart } from "@/lib/stats"
-
-/** Bars with many categories are laid out horizontally so labels stay readable. */
-const VERTICAL_BAR_THRESHOLD = 12
 
 /** Series toggles appear once a line chart carries more than this many curves. */
 const TOGGLE_THRESHOLD = 2
@@ -412,9 +411,7 @@ export function StatChart({ chart }: { chart: StatsChart }) {
     vertical && series.length === 1
       ? [...data].sort((a, b) => Number(b[series[0].key]) - Number(a[series[0].key]))
       : data
-  const height = vertical
-    ? Math.max(280, data.length * (series.length > 1 ? 30 : 24) + 80)
-    : 320
+  const height = chartHeight(chart)
   // A stack whose rows all add up to 100 is a share, not a count: stop the axis
   // at 100 instead of letting Recharts round up to 120.
   const stackedPercent =

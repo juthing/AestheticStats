@@ -94,26 +94,25 @@ export function formatWeekLong(value: string) {
 }
 
 /**
- * Weekly bars carry 53 categories; labelling each one is noise. Ticks are
- * pinned to the first week of each month, labelled with the month itself.
+ * Weekly axes carry 53 categories; labelling each one is noise. Every month
+ * gets one tick, sitting on the middle week of that month so the label reads as
+ * centred under its own block of bars.
  */
-export function monthTicks(data: ChartRow[], xKey: string, minGap = 3) {
-  const ticks: string[] = []
-  let previousMonth = ""
-  let lastTickIndex = -Infinity
-  data.forEach((row, index) => {
+export function monthTicks(data: ChartRow[], xKey: string) {
+  const groups = new Map<string, string[]>()
+  for (const row of data) {
     const value = String(row[xKey] ?? "")
     const monday = weekStart(value)
-    if (!monday) return
-    const month = `${monday.getUTCFullYear()}-${monday.getUTCMonth()}`
-    if (month === previousMonth) return
-    previousMonth = month
-    // A month with only a week or two of data would collide with the next one.
-    if (index - lastTickIndex < minGap) return
-    ticks.push(value)
-    lastTickIndex = index
-  })
-  return ticks
+    if (!monday) continue
+    const month = `${monday.getUTCFullYear()}-${String(monday.getUTCMonth()).padStart(2, "0")}`
+    const group = groups.get(month)
+    if (group) group.push(value)
+    else groups.set(month, [value])
+  }
+
+  return [...groups.values()].map(
+    (weeks) => weeks[Math.floor((weeks.length - 1) / 2)]
+  )
 }
 
 const weekMonthFormat = new Intl.DateTimeFormat("fr-FR", {

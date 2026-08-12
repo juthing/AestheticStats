@@ -48,6 +48,8 @@ export type StatsChart = {
   stacked?: boolean
   nameKey?: string
   dataKey?: string
+  /** Lower bound on the x value; rows before it are dropped. */
+  from?: string
   data: ChartRow[]
 }
 
@@ -98,6 +100,9 @@ function withoutExcludedValues(chart: StatsChart): StatsChart {
 
   const data = chart.data
     .filter((row) => !(xKey && EXCLUDED_VALUES.has(String(row[xKey]))))
+    // `from` trims the head of a series whose early period is not worth showing.
+    // The x values sort lexicographically ("2026-04"), so a string compare does.
+    .filter((row) => !(chart.from && xKey && String(row[xKey]) < chart.from))
     .map((row) => {
       const next: ChartRow = {}
       for (const [key, value] of Object.entries(row)) {

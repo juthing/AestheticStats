@@ -1,7 +1,7 @@
 {
   "id": "completude_donnees",
   "title": "Complétude des champs",
-  "description": "Pourcentage de reports pour lesquels chaque champ est réellement renseigné (hors valeurs vides et placeholders type « Aucun commentaire fourni »). Indique la fiabilité des analyses qui s'appuient sur ces champs.",
+  "description": "Part des reports où chaque champ est réellement renseigné.",
   "chartType": "bar",
   "xKey": "champ",
   "series": [

@@ -1,7 +1,7 @@
 {
   "id": "repartition_decisions",
   "title": "Répartition des décisions",
-  "description": "Part de chaque décision sur l'ensemble des reports. Utilise la colonne normalisée : les anciens codes (blacklisted, denied_ignored…) sont fusionnés avec leurs équivalents français adoptés le 14/02/2026.",
+  "description": "Part de chaque décision sur l'ensemble des reports. Les anciens codes anglais sont fusionnés avec leurs équivalents français.",
   "chartType": "pie",
   "xKey": "decision",
   "series": [

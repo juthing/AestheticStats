@@ -1,7 +1,7 @@
 {
   "id": "decisions_par_staff",
   "title": "Répartition des décisions par membre du staff",
-  "description": "Pour chaque staff ayant traité au moins 20 reports, part de chaque décision en pourcentage de son activité. Révèle les écarts de sévérité entre modérateurs. À interpréter avec le volume total, indiqué par le champ 'total'.",
+  "description": "Part de chaque décision dans l'activité des staffs ayant traité au moins 20 reports.",
   "chartType": "bar",
   "xKey": "staff",
   "series": [

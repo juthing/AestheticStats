@@ -1,7 +1,7 @@
 {
   "id": "matrice_type_decision",
   "title": "Croisement type de demande × décision",
-  "description": "Nombre de reports pour chaque combinaison type de demande / décision. Se lit en barres empilées : chaque barre est un type, découpé par décision.",
+  "description": "Nombre de reports par combinaison type de demande / décision.",
   "chartType": "bar",
   "xKey": "type",
   "series": [

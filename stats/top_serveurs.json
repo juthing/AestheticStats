@@ -1,7 +1,7 @@
 {
   "id": "top_serveurs",
   "title": "Top 15 des serveurs par volume de reports",
-  "description": "Serveurs d'où proviennent le plus de reports, avec leur taux de blacklist associé. Un fort volume combiné à un faible taux de blacklist peut signaler du sur-signalement.",
+  "description": "Serveurs à l'origine du plus grand nombre de reports, et part de leurs reports aboutissant à un blacklist.",
   "chartType": "bar",
   "xKey": "serveur",
   "series": [

@@ -1,7 +1,7 @@
 {
   "id": "activite_staff_par_mois",
   "title": "Activité mensuelle des 30 staffs les plus actifs",
-  "description": "Nombre de reports traités chaque mois par les principaux membres du staff. Permet de visualiser les arrivées, les départs et les variations de charge.",
+  "description": "Nombre de reports traités chaque mois par les 30 staffs les plus actifs.",
   "chartType": "area",
   "xKey": "mois",
   "series": [

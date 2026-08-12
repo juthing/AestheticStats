@@ -40,8 +40,11 @@ graphique n'est codé en dur. Quelques comportements dérivés des données :
   basculent en barres couchées passé 12 catégories ;
 - les courbes de plus de 2 séries reçoivent des boutons de sélection (toutes
   affichées par défaut) ;
-- les semaines `2026-32` sont affichées par la date de leur lundi
-  (« 10 août 26 », « Semaine du 10 août 2026 » dans l'infobulle).
+- un axe hebdomadaire est libellé par mois, chaque libellé étant posé sur la
+  semaine médiane du mois ; l'infobulle donne la semaine exacte
+  (« Semaine du 10 août 2026 ») ;
+- un champ `from` optionnel coupe le début d'une série (`"from": "2026-04"`
+  ne garde que les semaines à partir de celle-là).
 
 **Pour mettre à jour les stats** : remplacer les fichiers de `stats/`. Un
 nouveau fichier doit être ajouté à `stats/index.json` **et** au registre de

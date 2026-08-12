@@ -1,7 +1,7 @@
 {
   "id": "resume",
   "title": "Chiffres clés",
-  "description": "Vue d'ensemble de l'activité de modération sur la période couverte.",
+  "description": "Vue d'ensemble de la période couverte.",
   "chartType": "stats",
   "data": [
     {

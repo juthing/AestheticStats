@@ -1,7 +1,7 @@
 {
   "id": "reports_par_semaine",
   "title": "Évolution du nombre de reports par semaine",
-  "description": "Nombre de reports traités chaque semaine sur toute la période couverte. Permet de repérer les pics d'activité, les périodes creuses et la tendance de fond.",
+  "description": "Nombre de reports reçus chaque semaine.",
   "chartType": "bar",
   "xKey": "semaine",
   "series": [

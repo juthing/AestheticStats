@@ -6,6 +6,8 @@ import type { ChartRow, ChartSeries, StatsChart } from "@/lib/stats"
  * hue, so two different entities are never painted the same color.
  */
 export const PALETTE_SIZE = 8
+/** 8 hues x 2 tints: past this a series folds into "Autres". */
+export const MAX_SERIES = 16
 export const OTHER_KEY = "Autres"
 export const OTHER_COLOR = "var(--muted-foreground)"
 
@@ -45,11 +47,56 @@ export function formatMonth(value: string) {
   return month ? `${month} ${match[1].slice(2)}` : value
 }
 
-/** "2026-03" -> "S03 26" (ISO week number, not a month) */
-export function formatWeek(value: string) {
+/**
+ * Weeks come out of the generator as `%Y-%W` (Monday-based, week 00 is the
+ * stretch before the year's first Monday) — verified against the export's
+ * bounds. A bare "S31 25" says nothing, so labels use the week's Monday.
+ */
+function weekStart(value: string) {
   const match = /^(\d{4})-(\d{1,2})$/.exec(value)
-  if (!match) return value
-  return `S${match[2]} ${match[1].slice(2)}`
+  if (!match) return null
+  const year = Number(match[1])
+  const week = Number(match[2])
+  const jan1 = new Date(Date.UTC(year, 0, 1))
+  // Monday of week 01, then step back a week per unit below it.
+  const offsetToMonday = (8 - (jan1.getUTCDay() || 7)) % 7
+  const firstMonday = new Date(jan1)
+  firstMonday.setUTCDate(jan1.getUTCDate() + offsetToMonday)
+  const monday = new Date(firstMonday)
+  monday.setUTCDate(firstMonday.getUTCDate() + (week - 1) * 7)
+  return monday
+}
+
+const weekTickFormat = new Intl.DateTimeFormat("fr-FR", {
+  day: "numeric",
+  month: "short",
+  year: "2-digit",
+  timeZone: "UTC",
+})
+
+const weekLongFormat = new Intl.DateTimeFormat("fr-FR", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+})
+
+/** "2026-32" -> "10 août 26" */
+export function formatWeek(value: string) {
+  const monday = weekStart(value)
+  return monday ? weekTickFormat.format(monday) : value
+}
+
+/** "2026-32" -> "Semaine du 10 août 2026" */
+export function formatWeekLong(value: string) {
+  const monday = weekStart(value)
+  return monday ? `Semaine du ${weekLongFormat.format(monday)}` : value
+}
+
+export function tooltipLabelFormatter(xKey: string | undefined) {
+  if (xKey === "mois") return formatMonth
+  if (xKey === "semaine") return formatWeekLong
+  return (value: string) => value
 }
 
 export function axisFormatter(xKey: string | undefined) {
@@ -93,26 +140,24 @@ export function isPercentSeries(series: ChartSeries[] | undefined) {
 }
 
 /**
- * Recolors the series on the fixed palette and, past 8 of them, keeps the 8
- * largest and sums the rest into a single "Autres" series.
+ * Recolors the series on the fixed palette and, past MAX_SERIES of them, keeps
+ * the largest and sums the rest into a single "Autres" series.
+ *
+ * Keys are also slugged to `s0`, `s1`, … : the generator's keys carry spaces and
+ * accents ("Faits avérés mais mineurs"), and shadcn/ui's ChartStyle turns every
+ * config key into a `--color-KEY` custom property, which those cannot be. With
+ * slugs the charts use `var(--color-s0)` exactly as the docs describe.
  */
 export function resolveSeries(chart: StatsChart): {
   series: ChartSeries[]
   data: ChartRow[]
   folded: number
 } {
-  const series = chart.series ?? []
-
-  if (series.length <= PALETTE_SIZE) {
-    return {
-      series: series.map((item, index) => ({ ...item, color: slotColor(index) })),
-      data: chart.data,
-      folded: 0,
-    }
-  }
+  const source = chart.series ?? []
+  const xKey = chart.xKey
 
   const totals = new Map<string, number>()
-  for (const item of series) {
+  for (const item of source) {
     let sum = 0
     for (const row of chart.data) {
       const value = row[item.key]
@@ -121,30 +166,50 @@ export function resolveSeries(chart: StatsChart): {
     totals.set(item.key, sum)
   }
 
-  const kept = [...series]
-    .sort((a, b) => (totals.get(b.key) ?? 0) - (totals.get(a.key) ?? 0))
-    .slice(0, PALETTE_SIZE)
+  const kept =
+    source.length <= MAX_SERIES
+      ? source
+      : [...source]
+          .sort((a, b) => (totals.get(b.key) ?? 0) - (totals.get(a.key) ?? 0))
+          .slice(0, MAX_SERIES)
   const keptKeys = new Set(kept.map((item) => item.key))
-  const dropped = series.filter((item) => !keptKeys.has(item.key))
+  const dropped = source.filter((item) => !keptKeys.has(item.key))
+
+  // A lone series keeps whatever accent the generator asked for; multi-series
+  // charts get the slots in order, since the generator cycles --chart-1..5 and
+  // would otherwise paint two series the same.
+  const series: ChartSeries[] = kept.map((item, index) => ({
+    key: `s${index}`,
+    label: item.label,
+    color:
+      kept.length === 1 && /^var\(--chart-[1-8]\)$/.test(item.color)
+        ? item.color
+        : slotColor(index),
+  }))
+  if (dropped.length > 0) {
+    series.push({
+      key: `s${kept.length}`,
+      label: `Autres (${dropped.length})`,
+      color: OTHER_COLOR,
+    })
+  }
 
   const data = chart.data.map((row) => {
-    const next: ChartRow = { ...row }
-    let other = 0
-    for (const item of dropped) {
-      const value = next[item.key]
-      if (typeof value === "number") other += value
-      delete next[item.key]
+    const next: ChartRow = {}
+    if (xKey) next[xKey] = row[xKey]
+    kept.forEach((item, index) => {
+      next[`s${index}`] = row[item.key] ?? 0
+    })
+    if (dropped.length > 0) {
+      let other = 0
+      for (const item of dropped) {
+        const value = row[item.key]
+        if (typeof value === "number") other += value
+      }
+      next[`s${kept.length}`] = other
     }
-    next[OTHER_KEY] = other
     return next
   })
 
-  return {
-    series: [
-      ...kept.map((item, index) => ({ ...item, color: slotColor(index) })),
-      { key: OTHER_KEY, label: `Autres (${dropped.length})`, color: OTHER_COLOR },
-    ],
-    data,
-    folded: dropped.length,
-  }
+  return { series, data, folded: dropped.length }
 }

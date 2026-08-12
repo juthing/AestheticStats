@@ -33,7 +33,15 @@ données :
 ```
 
 Le rendu est générique : `components/stat-chart.tsx` lit ces champs, aucun
-graphique n'est codé en dur.
+graphique n'est codé en dur. Quelques comportements dérivés des données :
+
+- les aires passent en dégradé jusqu'à 4 séries, en aplat translucide au-delà ;
+- les barres sur un axe `mois` / `semaine` restent horizontales, les autres
+  basculent en barres couchées passé 12 catégories ;
+- les courbes de plus de 2 séries reçoivent des boutons de sélection (toutes
+  affichées par défaut) ;
+- les semaines `2026-32` sont affichées par la date de leur lundi
+  (« 10 août 26 », « Semaine du 10 août 2026 » dans l'infobulle).
 
 **Pour mettre à jour les stats** : remplacer les fichiers de `stats/`. Un
 nouveau fichier doit être ajouté à `stats/index.json` **et** au registre de
@@ -47,7 +55,11 @@ tous les graphiques, séries et tableaux.
 ## Couleurs
 
 Les 8 emplacements catégoriels `--chart-1` … `--chart-8` sont définis dans
-`app/globals.css`, en version claire et sombre. Ils sont attribués dans l'ordre
+`app/globals.css`, en version claire et sombre. Les séries sont slugifiées en
+`s0`, `s1`, … à l'affichage : shadcn/ui transforme chaque clé de `ChartConfig`
+en propriété `--color-<clé>`, ce que des libellés accentués ne peuvent pas être.
+Les marks référencent donc `var(--color-s0)` comme dans la doc. Un graphique à
+série unique conserve la couleur demandée dans son JSON. Ils sont attribués dans l'ordre
 et jamais recyclés : au-delà de 8 séries, les plus petites sont regroupées sous
 « Autres » (cf. `resolveSeries` dans `lib/chart-utils.ts`). Les camemberts, qui
 affichent toutes leurs parts, réutilisent les mêmes teintes éclaircies au-delà

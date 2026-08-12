@@ -14,7 +14,7 @@
       "id": "reports_par_semaine",
       "title": "Évolution des reports par semaine",
       "description": "Nombre de reports traités chaque semaine sur toute la période couverte. Permet de repérer les pics d'activité, les périodes creuses et la tendance de fond.",
-      "chartType": "line",
+      "chartType": "area",
       "file": "reports_par_semaine.json",
       "points": 53
     },
@@ -51,12 +51,12 @@
       "points": 37
     },
     {
-      "id": "activite_staff_par_mois",
-      "title": "Activité mensuelle des 30 staffs les plus actifs",
-      "description": "Nombre de reports traités chaque mois par les principaux membres du staff. Permet de visualiser les arrivées, les départs et les variations de charge.",
-      "chartType": "area",
-      "file": "activite_staff_par_mois.json",
-      "points": 12
+      "id": "staffs_actuels_cumul",
+      "title": "Total cumulé de reports traités",
+      "description": "Cumul progressif des reports traités par chaque staff depuis le début de la période. La pente indique le rythme : un palier signale une inactivité, une pente raide une forte contribution sur ce mois.",
+      "chartType": "line",
+      "file": "staffs_actuels_cumul.json",
+      "points": 13
     },
     {
       "id": "reports_par_heure",

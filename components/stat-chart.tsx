@@ -8,9 +8,9 @@ import {
   BarChart,
   CartesianGrid,
   Cell,
+  LabelList,
   Line,
   LineChart,
-  LabelList,
   Pie,
   PieChart,
   PolarAngleAxis,
@@ -21,6 +21,8 @@ import {
   YAxis,
 } from "recharts"
 
+import { Button } from "@/components/ui/button"
+import { Toggle } from "@/components/ui/toggle"
 import {
   ChartContainer,
   ChartLegend,
@@ -37,17 +39,94 @@ import {
   resolveSeries,
   shortenTick,
   slotColor,
+  tooltipLabelFormatter,
 } from "@/lib/chart-utils"
-import type { StatsChart } from "@/lib/stats"
+import type { ChartSeries, StatsChart } from "@/lib/stats"
 
 /** Bars with many categories are laid out horizontally so labels stay readable. */
 const VERTICAL_BAR_THRESHOLD = 12
+
+/** Series toggles appear once a line chart carries more than this many curves. */
+const TOGGLE_THRESHOLD = 2
+
+/** Beyond this many stacked bands a gradient fill turns to mush. */
+const GRADIENT_SERIES_LIMIT = 4
+
+function SeriesToggles({
+  series,
+  hidden,
+  onToggle,
+  onReset,
+}: {
+  series: ChartSeries[]
+  hidden: ReadonlySet<string>
+  onToggle: (key: string) => void
+  onReset: () => void
+}) {
+  return (
+    <div className="flex flex-wrap items-center justify-center gap-1.5 pt-3">
+      {series.map((item) => {
+        const shown = !hidden.has(item.key)
+        return (
+          <Toggle
+            key={item.key}
+            size="sm"
+            variant="outline"
+            pressed={shown}
+            onPressedChange={() => onToggle(item.key)}
+            className="gap-1.5 text-xs data-unchecked:text-muted-foreground"
+          >
+            {/* The toggles sit outside the chart's `data-chart` scope, so they
+                use the global --chart-* token rather than --color-<key>. */}
+            <span
+              aria-hidden
+              className="size-2 shrink-0 rounded-[2px]"
+              style={{
+                backgroundColor: shown ? item.color : "transparent",
+                boxShadow: shown ? undefined : `inset 0 0 0 1px ${item.color}`,
+              }}
+            />
+            {item.label}
+          </Toggle>
+        )
+      })}
+      {hidden.size > 0 ? (
+        <Button variant="ghost" size="sm" className="text-xs" onClick={onReset}>
+          Tout afficher
+        </Button>
+      ) : null}
+    </div>
+  )
+}
 
 export function StatChart({ chart }: { chart: StatsChart }) {
   const { series, data } = React.useMemo(() => resolveSeries(chart), [chart])
   const xKey = chart.xKey ?? "name"
   const percent = isPercentSeries(chart.series)
   const formatXAxis = axisFormatter(chart.xKey)
+  const formatTooltipLabel = tooltipLabelFormatter(chart.xKey)
+
+  // Gradient ids have to be unique per chart instance and valid in url(...).
+  const uid = React.useId().replace(/:/g, "")
+  const gradientId = (index: number) => `${uid}-fill-${index}`
+  /** A gradient reads well on a few bands; a dense stack needs flat fills. */
+  const gradientFill = series.length <= GRADIENT_SERIES_LIMIT
+
+  const [hidden, setHidden] = React.useState<ReadonlySet<string>>(new Set())
+  const toggleSeries = React.useCallback((key: string) => {
+    setHidden((current) => {
+      const next = new Set(current)
+      if (!next.delete(key)) next.add(key)
+      return next
+    })
+  }, [])
+  const resetSeries = React.useCallback(() => setHidden(new Set()), [])
+
+  const toggleable =
+    chart.chartType === "line" && series.length > TOGGLE_THRESHOLD
+  const visibleSeries = toggleable
+    ? series.filter((item) => !hidden.has(item.key))
+    : series
 
   /**
    * Slices are normalized to `{ label, value }`: the raw name key can collide
@@ -58,26 +137,31 @@ export function StatChart({ chart }: { chart: StatsChart }) {
     if (chart.chartType !== "pie") return []
     const nameKey = chart.nameKey ?? xKey
     const dataKey = chart.dataKey ?? "total"
-    return chart.data.map((row) => ({
+    return chart.data.map((row, index) => ({
+      key: `p${index}`,
       label: String(row[nameKey]),
       value: Number(row[dataKey] ?? 0),
+      color: slotColor(index),
     }))
   }, [chart, xKey])
 
   /**
-   * Labels only: series keys carry spaces and accents ("Faits avérés mais
-   * mineurs"), which cannot become CSS custom properties. Colors go straight to
-   * the marks instead of through `var(--color-KEY)`.
+   * Slugged keys carry the color, so shadcn/ui's ChartStyle emits a valid
+   * `--color-<key>` for every series and the marks reference it with
+   * `var(--color-...)` as the docs describe.
    */
   const config = React.useMemo(() => {
     if (chart.chartType === "pie") {
       return Object.fromEntries(
-        slices.map((slice) => [slice.label, { label: slice.label }])
+        slices.map((slice) => [
+          slice.key,
+          { label: slice.label, color: slice.color },
+        ])
       ) satisfies ChartConfig
     }
 
     return Object.fromEntries(
-      series.map((item) => [item.key, { label: item.label }])
+      series.map((item) => [item.key, { label: item.label, color: item.color }])
     ) satisfies ChartConfig
   }, [chart.chartType, series, slices])
 
@@ -88,10 +172,12 @@ export function StatChart({ chart }: { chart: StatsChart }) {
 
   const tooltip = (
     <ChartTooltip
+      cursor={false}
       content={
         <ChartTooltipContent
+          indicator="dot"
           labelFormatter={(label) =>
-            typeof label === "string" ? formatXAxis(label) : label
+            typeof label === "string" ? formatTooltipLabel(label) : label
           }
         />
       }
@@ -99,7 +185,7 @@ export function StatChart({ chart }: { chart: StatsChart }) {
   )
 
   const legend =
-    series.length > 1 || chart.chartType === "pie" ? (
+    series.length > 1 ? (
       <ChartLegend
         content={<ChartLegendContent className="flex-wrap gap-x-4 gap-y-1.5" />}
       />
@@ -116,20 +202,20 @@ export function StatChart({ chart }: { chart: StatsChart }) {
         >
           <PieChart>
             <ChartTooltip
-              content={<ChartTooltipContent nameKey="label" hideLabel />}
+              content={<ChartTooltipContent nameKey="key" hideLabel />}
             />
             <Pie
               data={slices}
               dataKey="value"
-              nameKey="label"
+              nameKey="key"
               innerRadius="46%"
               outerRadius="80%"
               paddingAngle={2}
               stroke="var(--background)"
               strokeWidth={2}
             >
-              {slices.map((slice, index) => (
-                <Cell key={slice.label} fill={slotColor(index)} />
+              {slices.map((slice) => (
+                <Cell key={slice.key} fill={`var(--color-${slice.key})`} />
               ))}
             </Pie>
           </PieChart>
@@ -137,12 +223,12 @@ export function StatChart({ chart }: { chart: StatsChart }) {
         {/* Legend as a list rather than a chip row: it carries the count and
             the share, which is what the slices are actually read for. */}
         <ul className="flex w-full flex-col gap-1 text-sm md:w-1/2">
-          {slices.map((slice, index) => (
-            <li key={slice.label} className="flex items-center gap-2">
+          {slices.map((slice) => (
+            <li key={slice.key} className="flex items-center gap-2">
               <span
                 aria-hidden
                 className="size-2.5 shrink-0 rounded-[2px]"
-                style={{ backgroundColor: slotColor(index) }}
+                style={{ backgroundColor: `var(--color-${slice.key})` }}
               />
               <span className="min-w-0 flex-1 truncate" title={slice.label}>
                 {slice.label}
@@ -162,19 +248,23 @@ export function StatChart({ chart }: { chart: StatsChart }) {
 
   if (chart.chartType === "radar") {
     return (
-      <ChartContainer config={config} className="mx-auto h-[340px] w-full">
-        <RadarChart data={data}>
-          <ChartTooltip content={<ChartTooltipContent />} />
+      <ChartContainer config={config} className="mx-auto h-[360px] w-full">
+        <RadarChart data={data} outerRadius="72%">
+          <ChartTooltip
+            cursor={false}
+            content={<ChartTooltipContent indicator="dot" />}
+          />
           <PolarGrid />
           <PolarAngleAxis dataKey={xKey} tickFormatter={formatXAxis} />
           {series.map((item) => (
             <Radar
               key={item.key}
               dataKey={item.key}
-              fill={item.color}
-              fillOpacity={0.5}
-              stroke={item.color}
+              fill={`var(--color-${item.key})`}
+              fillOpacity={0.4}
+              stroke={`var(--color-${item.key})`}
               strokeWidth={2}
+              dot={{ r: 2.5, fillOpacity: 1 }}
             />
           ))}
           {legend}
@@ -185,39 +275,49 @@ export function StatChart({ chart }: { chart: StatsChart }) {
 
   if (chart.chartType === "line") {
     return (
-      <ChartContainer config={config} className="h-[320px] w-full">
-        <LineChart accessibilityLayer data={data} margin={{ left: 4, right: 12 }}>
-          <CartesianGrid vertical={false} />
-          <XAxis
-            dataKey={xKey}
-            tickLine={false}
-            axisLine={false}
-            tickMargin={10}
-            minTickGap={24}
-            tickFormatter={formatXAxis}
-          />
-          <YAxis
-            tickLine={false}
-            axisLine={false}
-            tickMargin={8}
-            width={percent ? 56 : 44}
-            tickFormatter={(value) => valueFormatter(value)}
-          />
-          {tooltip}
-          {series.map((item) => (
-            <Line
-              key={item.key}
-              dataKey={item.key}
-              type="monotone"
-              stroke={item.color}
-              strokeWidth={2}
-              dot={false}
-              activeDot={{ r: 4 }}
+      <div className="flex flex-col">
+        <ChartContainer config={config} className="h-[320px] w-full">
+          <LineChart accessibilityLayer data={data} margin={{ left: 4, right: 12 }}>
+            <CartesianGrid vertical={false} />
+            <XAxis
+              dataKey={xKey}
+              tickLine={false}
+              axisLine={false}
+              tickMargin={10}
+              minTickGap={32}
+              tickFormatter={formatXAxis}
             />
-          ))}
-          {legend}
-        </LineChart>
-      </ChartContainer>
+            <YAxis
+              tickLine={false}
+              axisLine={false}
+              tickMargin={8}
+              width={percent ? 56 : 44}
+              tickFormatter={(value) => valueFormatter(value)}
+            />
+            {tooltip}
+            {visibleSeries.map((item) => (
+              <Line
+                key={item.key}
+                dataKey={item.key}
+                type="monotone"
+                stroke={`var(--color-${item.key})`}
+                strokeWidth={2}
+                dot={false}
+                activeDot={{ r: 4 }}
+              />
+            ))}
+            {toggleable ? null : legend}
+          </LineChart>
+        </ChartContainer>
+        {toggleable ? (
+          <SeriesToggles
+            series={series}
+            hidden={hidden}
+            onToggle={toggleSeries}
+            onReset={resetSeries}
+          />
+        ) : null}
+      </div>
     )
   }
 
@@ -225,13 +325,38 @@ export function StatChart({ chart }: { chart: StatsChart }) {
     return (
       <ChartContainer config={config} className="h-[360px] w-full">
         <AreaChart accessibilityLayer data={data} margin={{ left: 4, right: 12 }}>
+          <defs>
+            {gradientFill
+              ? series.map((item, index) => (
+                  <linearGradient
+                    key={item.key}
+                    id={gradientId(index)}
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="1"
+                  >
+                    <stop
+                      offset="5%"
+                      stopColor={`var(--color-${item.key})`}
+                      stopOpacity={0.8}
+                    />
+                    <stop
+                      offset="95%"
+                      stopColor={`var(--color-${item.key})`}
+                      stopOpacity={0.1}
+                    />
+                  </linearGradient>
+                ))
+              : null}
+          </defs>
           <CartesianGrid vertical={false} />
           <XAxis
             dataKey={xKey}
             tickLine={false}
             axisLine={false}
             tickMargin={10}
-            minTickGap={24}
+            minTickGap={32}
             tickFormatter={formatXAxis}
           />
           <YAxis
@@ -242,16 +367,20 @@ export function StatChart({ chart }: { chart: StatsChart }) {
             tickFormatter={(value) => valueFormatter(value)}
           />
           {tooltip}
-          {series.map((item) => (
+          {series.map((item, index) => (
             <Area
               key={item.key}
               dataKey={item.key}
-              type="monotone"
+              type="natural"
               stackId={chart.stacked ? "a" : undefined}
-              fill={item.color}
-              fillOpacity={0.75}
-              stroke={item.color}
-              strokeWidth={1}
+              fill={
+                gradientFill
+                  ? `url(#${gradientId(index)})`
+                  : `var(--color-${item.key})`
+              }
+              fillOpacity={gradientFill ? 1 : 0.75}
+              stroke={`var(--color-${item.key})`}
+              strokeWidth={2}
             />
           ))}
           {legend}
@@ -261,8 +390,11 @@ export function StatChart({ chart }: { chart: StatsChart }) {
   }
 
   // Bar
+  // A time axis always reads left to right, however many points it carries.
+  const timeAxis = chart.xKey === "mois" || chart.xKey === "semaine"
   const vertical =
-    chart.layout === "vertical" || data.length > VERTICAL_BAR_THRESHOLD
+    chart.layout === "vertical" ||
+    (!timeAxis && data.length > VERTICAL_BAR_THRESHOLD)
   const height = vertical
     ? Math.max(280, data.length * (series.length > 1 ? 30 : 24) + 80)
     : 320
@@ -350,7 +482,7 @@ export function StatChart({ chart }: { chart: StatsChart }) {
             key={item.key}
             dataKey={item.key}
             stackId={chart.stacked ? "a" : undefined}
-            fill={item.color}
+            fill={`var(--color-${item.key})`}
             radius={4}
             maxBarSize={vertical ? 22 : 56}
             stroke="var(--background)"

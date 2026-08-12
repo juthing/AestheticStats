@@ -1,6 +1,8 @@
 import { Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
+import { DesktopNotice } from "@/components/desktop-notice"
+import { RotateGate } from "@/components/rotate-gate"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 
@@ -29,7 +31,11 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+          <DesktopNotice />
+          <RotateGate />
+        </ThemeProvider>
       </body>
     </html>
   )

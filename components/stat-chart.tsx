@@ -107,6 +107,11 @@ export function StatChart({ chart }: { chart: StatsChart }) {
   const percent = isPercentSeries(chart.series)
   const formatXAxis = axisFormatter(chart.xKey)
   const formatTooltipLabel = tooltipLabelFormatter(chart.xKey)
+  // A weekly axis is labelled by month: 53 week labels are unreadable, and the
+  // tooltip still names the exact week.
+  const weekAxis = chart.xKey === "semaine"
+  const weekTicks = weekAxis ? monthTicks(data, xKey) : undefined
+  const formatCategory = weekAxis ? formatWeekMonth : formatXAxis
 
   // Gradient ids have to be unique per chart instance and valid in url(...).
   const uid = React.useId().replace(/:/g, "")
@@ -227,10 +232,12 @@ export function StatChart({ chart }: { chart: StatsChart }) {
         <ul className="flex w-full flex-col gap-1 text-sm md:w-1/2">
           {slices.map((slice) => (
             <li key={slice.key} className="flex items-center gap-2">
+              {/* Outside the chart's `data-chart` scope, so --color-<key> is
+                  not defined here: use the global --chart-* token. */}
               <span
                 aria-hidden
                 className="size-2.5 shrink-0 rounded-[2px]"
-                style={{ backgroundColor: `var(--color-${slice.key})` }}
+                style={{ backgroundColor: slice.color }}
               />
               <span className="min-w-0 flex-1 truncate" title={slice.label}>
                 {slice.label}
@@ -287,7 +294,8 @@ export function StatChart({ chart }: { chart: StatsChart }) {
               axisLine={false}
               tickMargin={10}
               minTickGap={32}
-              tickFormatter={formatXAxis}
+              ticks={weekTicks}
+              tickFormatter={formatCategory}
             />
             <YAxis
               tickLine={false}
@@ -359,7 +367,8 @@ export function StatChart({ chart }: { chart: StatsChart }) {
             axisLine={false}
             tickMargin={10}
             minTickGap={32}
-            tickFormatter={formatXAxis}
+            ticks={weekTicks}
+            tickFormatter={formatCategory}
           />
           <YAxis
             tickLine={false}
@@ -403,9 +412,6 @@ export function StatChart({ chart }: { chart: StatsChart }) {
     vertical && series.length === 1
       ? [...data].sort((a, b) => Number(b[series[0].key]) - Number(a[series[0].key]))
       : data
-  // 53 weekly bars: mark the months instead of every week.
-  const weekAxis = chart.xKey === "semaine"
-  const categoryTicks = weekAxis ? monthTicks(barData, xKey) : undefined
   const height = vertical
     ? Math.max(280, data.length * (series.length > 1 ? 30 : 24) + 80)
     : 320
@@ -472,7 +478,7 @@ export function StatChart({ chart }: { chart: StatsChart }) {
               axisLine={false}
               tickMargin={10}
               interval={0}
-              ticks={categoryTicks}
+              ticks={weekTicks}
               tickFormatter={(value: string) =>
                 weekAxis
                   ? formatWeekMonth(value)

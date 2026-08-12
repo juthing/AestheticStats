@@ -59,12 +59,12 @@
       "points": 12
     },
     {
-      "id": "staffs_actuels_cumul",
-      "title": "Total cumulé de reports traités",
-      "description": "Cumul progressif des reports traités par chaque staff depuis le début de la période. La pente indique le rythme : un palier signale une inactivité, une pente raide une forte contribution sur ce mois.",
+      "id": "staffs_actuels_par_semaine",
+      "title": "Évolution hebdomadaire par staff",
+      "description": "Nombre de reports traités chaque semaine par chacun des staffs actuellement en poste. Les semaines sans activité apparaissent à zéro, ce qui permet de repérer les périodes d'absence. Format des semaines : année-numéro ISO.",
       "chartType": "line",
-      "file": "staffs_actuels_cumul.json",
-      "points": 13
+      "file": "staffs_actuels_par_semaine.json",
+      "points": 53
     },
     {
       "id": "reports_par_heure",

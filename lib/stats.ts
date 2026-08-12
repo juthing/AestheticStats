@@ -17,7 +17,7 @@ import reportsParSemaine from "@/stats/reports_par_semaine.json"
 import resume from "@/stats/resume.json"
 import tauxBlacklistMensuel from "@/stats/taux_blacklist_mensuel.json"
 import tauxBlacklistParType from "@/stats/taux_blacklist_par_type.json"
-import staffsActuelsCumul from "@/stats/staffs_actuels_cumul.json"
+import staffsActuelsParSemaine from "@/stats/staffs_actuels_par_semaine.json"
 import topEmetteurs from "@/stats/top_emetteurs.json"
 import topServeurs from "@/stats/top_serveurs.json"
 
@@ -78,7 +78,7 @@ const registry: Record<string, unknown> = {
   resume: resume,
   taux_blacklist_mensuel: tauxBlacklistMensuel,
   taux_blacklist_par_type: tauxBlacklistParType,
-  staffs_actuels_cumul: staffsActuelsCumul,
+  staffs_actuels_par_semaine: staffsActuelsParSemaine,
   top_emetteurs: topEmetteurs,
   top_serveurs: topServeurs,
 }

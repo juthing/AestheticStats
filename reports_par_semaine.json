@@ -1,0 +1,240 @@
+{
+  "id": "reports_par_semaine",
+  "title": "Évolution des reports par semaine",
+  "description": "Nombre de reports traités chaque semaine sur toute la période couverte. Permet de repérer les pics d'activité, les périodes creuses et la tendance de fond.",
+  "chartType": "line",
+  "xKey": "semaine",
+  "series": [
+    {
+      "key": "total",
+      "label": "Reports",
+      "color": "var(--chart-1)"
+    }
+  ],
+  "chartConfig": {
+    "total": {
+      "label": "Reports",
+      "color": "var(--chart-1)"
+    }
+  },
+  "data": [
+    {
+      "semaine": "2025-31",
+      "total": 2
+    },
+    {
+      "semaine": "2025-32",
+      "total": 9
+    },
+    {
+      "semaine": "2025-35",
+      "total": 67
+    },
+    {
+      "semaine": "2025-36",
+      "total": 60
+    },
+    {
+      "semaine": "2025-37",
+      "total": 119
+    },
+    {
+      "semaine": "2025-38",
+      "total": 57
+    },
+    {
+      "semaine": "2025-39",
+      "total": 65
+    },
+    {
+      "semaine": "2025-40",
+      "total": 64
+    },
+    {
+      "semaine": "2025-41",
+      "total": 18
+    },
+    {
+      "semaine": "2025-42",
+      "total": 23
+    },
+    {
+      "semaine": "2025-43",
+      "total": 19
+    },
+    {
+      "semaine": "2025-44",
+      "total": 50
+    },
+    {
+      "semaine": "2025-45",
+      "total": 16
+    },
+    {
+      "semaine": "2025-46",
+      "total": 43
+    },
+    {
+      "semaine": "2025-47",
+      "total": 137
+    },
+    {
+      "semaine": "2025-48",
+      "total": 121
+    },
+    {
+      "semaine": "2025-49",
+      "total": 210
+    },
+    {
+      "semaine": "2025-50",
+      "total": 33
+    },
+    {
+      "semaine": "2025-51",
+      "total": 193
+    },
+    {
+      "semaine": "2025-52",
+      "total": 93
+    },
+    {
+      "semaine": "2026-00",
+      "total": 96
+    },
+    {
+      "semaine": "2026-01",
+      "total": 396
+    },
+    {
+      "semaine": "2026-02",
+      "total": 150
+    },
+    {
+      "semaine": "2026-03",
+      "total": 122
+    },
+    {
+      "semaine": "2026-04",
+      "total": 82
+    },
+    {
+      "semaine": "2026-05",
+      "total": 83
+    },
+    {
+      "semaine": "2026-06",
+      "total": 207
+    },
+    {
+      "semaine": "2026-07",
+      "total": 326
+    },
+    {
+      "semaine": "2026-08",
+      "total": 262
+    },
+    {
+      "semaine": "2026-09",
+      "total": 213
+    },
+    {
+      "semaine": "2026-10",
+      "total": 176
+    },
+    {
+      "semaine": "2026-11",
+      "total": 206
+    },
+    {
+      "semaine": "2026-12",
+      "total": 212
+    },
+    {
+      "semaine": "2026-13",
+      "total": 184
+    },
+    {
+      "semaine": "2026-14",
+      "total": 260
+    },
+    {
+      "semaine": "2026-15",
+      "total": 277
+    },
+    {
+      "semaine": "2026-16",
+      "total": 217
+    },
+    {
+      "semaine": "2026-17",
+      "total": 182
+    },
+    {
+      "semaine": "2026-18",
+      "total": 236
+    },
+    {
+      "semaine": "2026-19",
+      "total": 242
+    },
+    {
+      "semaine": "2026-20",
+      "total": 273
+    },
+    {
+      "semaine": "2026-21",
+      "total": 304
+    },
+    {
+      "semaine": "2026-22",
+      "total": 303
+    },
+    {
+      "semaine": "2026-23",
+      "total": 299
+    },
+    {
+      "semaine": "2026-24",
+      "total": 340
+    },
+    {
+      "semaine": "2026-25",
+      "total": 308
+    },
+    {
+      "semaine": "2026-26",
+      "total": 295
+    },
+    {
+      "semaine": "2026-27",
+      "total": 242
+    },
+    {
+      "semaine": "2026-28",
+      "total": 145
+    },
+    {
+      "semaine": "2026-29",
+      "total": 270
+    },
+    {
+      "semaine": "2026-30",
+      "total": 190
+    },
+    {
+      "semaine": "2026-31",
+      "total": 147
+    },
+    {
+      "semaine": "2026-32",
+      "total": 41
+    }
+  ],
+  "referenceLines": [
+    {
+      "x": "2026-06",
+      "label": "Changement de vocabulaire des décisions"
+    }
+  ]
+}

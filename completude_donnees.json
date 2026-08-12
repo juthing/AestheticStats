@@ -1,0 +1,38 @@
+{
+  "id": "completude_donnees",
+  "title": "Complétude des champs",
+  "description": "Pourcentage de reports pour lesquels chaque champ est réellement renseigné (hors valeurs vides et placeholders type « Aucun commentaire fourni »). Indique la fiabilité des analyses qui s'appuient sur ces champs.",
+  "chartType": "bar",
+  "xKey": "champ",
+  "series": [
+    {
+      "key": "taux",
+      "label": "Taux de remplissage (%)",
+      "color": "var(--chart-5)"
+    }
+  ],
+  "chartConfig": {
+    "taux": {
+      "label": "Taux de remplissage (%)",
+      "color": "var(--chart-5)"
+    }
+  },
+  "data": [
+    {
+      "champ": "Commentaire renseigné",
+      "taux": 1.4
+    },
+    {
+      "champ": "Raison renseignée",
+      "taux": 95.5
+    },
+    {
+      "champ": "Serveur identifié",
+      "taux": 99.3
+    },
+    {
+      "champ": "Staff identifié",
+      "taux": 99.7
+    }
+  ]
+}

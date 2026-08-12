@@ -1,0 +1,238 @@
+{
+  "id": "classement_staff",
+  "title": "Reports traités par membre du staff",
+  "description": "Nombre de reports traités par chaque membre du staff, du moins actif au plus actif. Les 30 reports d'avant le 03/09/2025 sont exclus : le champ Staff n'existait pas encore.",
+  "chartType": "bar",
+  "xKey": "staff",
+  "series": [
+    {
+      "key": "total",
+      "label": "Reports traités",
+      "color": "var(--chart-1)"
+    }
+  ],
+  "chartConfig": {
+    "total": {
+      "label": "Reports traités",
+      "color": "var(--chart-1)"
+    }
+  },
+  "data": [
+    {
+      "staff": "Lilithia",
+      "staffId": "673204794483015702",
+      "total": 3
+    },
+    {
+      "staff": "Yanis",
+      "staffId": "666592293758959629",
+      "total": 5
+    },
+    {
+      "staff": "Sandiwch de Jules",
+      "staffId": "1207987450304266240",
+      "total": 8
+    },
+    {
+      "staff": "Maéva",
+      "staffId": "183675539997851650",
+      "total": 12
+    },
+    {
+      "staff": "Excelsior",
+      "staffId": "765993107300679731",
+      "total": 17
+    },
+    {
+      "staff": "Noah",
+      "staffId": "827553960990343190",
+      "total": 17
+    },
+    {
+      "staff": "𝐃𝐲𝐙𝐨𝐫𝐢𝐨",
+      "staffId": "915703089099587644",
+      "total": 22
+    },
+    {
+      "staff": "Claire",
+      "staffId": "579736564641300527",
+      "total": 29
+    },
+    {
+      "staff": "❀ 𝒟𝑜𝓂𝒾 ❀",
+      "staffId": "409367156334002187",
+      "total": 36
+    },
+    {
+      "staff": "Hodaifa",
+      "staffId": "922117214100942909",
+      "total": 39
+    },
+    {
+      "staff": ">_ Nomad",
+      "staffId": "1350634749047210006",
+      "total": 42
+    },
+    {
+      "staff": "! Morgane",
+      "staffId": "993485179039527002",
+      "total": 47
+    },
+    {
+      "staff": "Gladou",
+      "staffId": "707017911075864617",
+      "total": 50
+    },
+    {
+      "staff": "RazoX",
+      "staffId": "1279454403954212955",
+      "total": 51
+    },
+    {
+      "staff": "theunforgiven",
+      "staffId": "1029075667511418962",
+      "total": 56
+    },
+    {
+      "staff": "*Lenzo",
+      "staffId": "912382941143916544",
+      "total": 69
+    },
+    {
+      "staff": "Vincent",
+      "staffId": "203941598893965312",
+      "total": 74
+    },
+    {
+      "staff": "taj",
+      "staffId": "330173199532949506",
+      "total": 77
+    },
+    {
+      "staff": "Elias",
+      "staffId": "794947122960793600",
+      "total": 89
+    },
+    {
+      "staff": "Lyasthénie",
+      "staffId": "871812004262846586",
+      "total": 89
+    },
+    {
+      "staff": "Tijani",
+      "staffId": "1437502277979082775",
+      "total": 97
+    },
+    {
+      "staff": "Alex",
+      "staffId": "1025817336835493942",
+      "total": 103
+    },
+    {
+      "staff": "Sir. Rhea ♄",
+      "staffId": "1077229753179832370",
+      "total": 111
+    },
+    {
+      "staff": "Jules™",
+      "staffId": "1164597199594852395",
+      "total": 112
+    },
+    {
+      "staff": "Valetino rossi",
+      "staffId": "788129401715425291",
+      "total": 113
+    },
+    {
+      "staff": "Prophecy",
+      "staffId": "211483050008248321",
+      "total": 140
+    },
+    {
+      "staff": "*Lenny",
+      "staffId": "1175873390670774364",
+      "total": 144
+    },
+    {
+      "staff": "Nyphiosy 𓅃",
+      "staffId": "1039861443815809024",
+      "total": 146
+    },
+    {
+      "staff": "Kérian",
+      "staffId": "454342163443220501",
+      "total": 150
+    },
+    {
+      "staff": "RitonDJ",
+      "staffId": "394411052093145088",
+      "total": 156
+    },
+    {
+      "staff": "Lolo",
+      "staffId": "771709679738814494",
+      "total": 177
+    },
+    {
+      "staff": "deleted_user_f9f668f01a2a",
+      "staffId": "1385629707365646398",
+      "total": 236
+    },
+    {
+      "staff": "Lumine",
+      "staffId": "321216585098461184",
+      "total": 248
+    },
+    {
+      "staff": "Mathéo",
+      "staffId": "872039839099400242",
+      "total": 257
+    },
+    {
+      "staff": "Samuel",
+      "staffId": "590741386018422784",
+      "total": 266
+    },
+    {
+      "staff": "M E L",
+      "staffId": "1345542663675314247",
+      "total": 389
+    },
+    {
+      "staff": "P-A",
+      "staffId": "419969729730445312",
+      "total": 413
+    },
+    {
+      "staff": "Thomas",
+      "staffId": "1224018111825449031",
+      "total": 563
+    },
+    {
+      "staff": "Lucas",
+      "staffId": "1057705135515639859",
+      "total": 580
+    },
+    {
+      "staff": "Thom Thomas",
+      "staffId": "1372538783827759104",
+      "total": 629
+    },
+    {
+      "staff": "Beluga",
+      "staffId": "1270092784573091943",
+      "total": 858
+    },
+    {
+      "staff": "Tom",
+      "staffId": "930447171449397269",
+      "total": 870
+    },
+    {
+      "staff": "Charline",
+      "staffId": "693152854046670948",
+      "total": 1065
+    }
+  ],
+  "layout": "vertical"
+}

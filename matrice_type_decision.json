@@ -1,0 +1,141 @@
+{
+  "id": "matrice_type_decision",
+  "title": "Croisement type de demande × décision",
+  "description": "Nombre de reports pour chaque combinaison type de demande / décision. Se lit en barres empilées : chaque barre est un type, découpé par décision.",
+  "chartType": "bar",
+  "xKey": "type",
+  "series": [
+    {
+      "key": "Blacklisté",
+      "label": "Blacklisté",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "Faits avérés mais mineurs",
+      "label": "Faits avérés mais mineurs",
+      "color": "var(--chart-2)"
+    },
+    {
+      "key": "Motif du signalement trop faible",
+      "label": "Motif du signalement trop faible",
+      "color": "var(--chart-3)"
+    },
+    {
+      "key": "Preuves insuffisantes",
+      "label": "Preuves insuffisantes",
+      "color": "var(--chart-4)"
+    },
+    {
+      "key": "Refuse: il a dit",
+      "label": "Refuse: il a dit",
+      "color": "var(--chart-5)"
+    },
+    {
+      "key": "Signalement non pertinent",
+      "label": "Signalement non pertinent",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "Signalement retiré",
+      "label": "Signalement retiré",
+      "color": "var(--chart-2)"
+    },
+    {
+      "key": "Temps de réponse trop long",
+      "label": "Temps de réponse trop long",
+      "color": "var(--chart-3)"
+    }
+  ],
+  "chartConfig": {
+    "Blacklisté": {
+      "label": "Blacklisté",
+      "color": "var(--chart-1)"
+    },
+    "Faits avérés mais mineurs": {
+      "label": "Faits avérés mais mineurs",
+      "color": "var(--chart-2)"
+    },
+    "Motif du signalement trop faible": {
+      "label": "Motif du signalement trop faible",
+      "color": "var(--chart-3)"
+    },
+    "Preuves insuffisantes": {
+      "label": "Preuves insuffisantes",
+      "color": "var(--chart-4)"
+    },
+    "Refuse: il a dit": {
+      "label": "Refuse: il a dit",
+      "color": "var(--chart-5)"
+    },
+    "Signalement non pertinent": {
+      "label": "Signalement non pertinent",
+      "color": "var(--chart-1)"
+    },
+    "Signalement retiré": {
+      "label": "Signalement retiré",
+      "color": "var(--chart-2)"
+    },
+    "Temps de réponse trop long": {
+      "label": "Temps de réponse trop long",
+      "color": "var(--chart-3)"
+    }
+  },
+  "data": [
+    {
+      "type": "Ban sans indication",
+      "Blacklisté": 907,
+      "Faits avérés mais mineurs": 68,
+      "Motif du signalement trop faible": 152,
+      "Preuves insuffisantes": 741,
+      "Refuse: il a dit": 0,
+      "Signalement non pertinent": 1984,
+      "Signalement retiré": 3651,
+      "Temps de réponse trop long": 15
+    },
+    {
+      "type": "Ban avec demande de blacklist",
+      "Blacklisté": 476,
+      "Faits avérés mais mineurs": 10,
+      "Motif du signalement trop faible": 4,
+      "Preuves insuffisantes": 57,
+      "Refuse: il a dit": 0,
+      "Signalement non pertinent": 70,
+      "Signalement retiré": 97,
+      "Temps de réponse trop long": 0
+    },
+    {
+      "type": "Signalement direct",
+      "Blacklisté": 102,
+      "Faits avérés mais mineurs": 4,
+      "Motif du signalement trop faible": 0,
+      "Preuves insuffisantes": 12,
+      "Refuse: il a dit": 1,
+      "Signalement non pertinent": 74,
+      "Signalement retiré": 38,
+      "Temps de réponse trop long": 1
+    },
+    {
+      "type": "Signalement",
+      "Blacklisté": 54,
+      "Faits avérés mais mineurs": 1,
+      "Motif du signalement trop faible": 1,
+      "Preuves insuffisantes": 18,
+      "Refuse: il a dit": 0,
+      "Signalement non pertinent": 42,
+      "Signalement retiré": 41,
+      "Temps de réponse trop long": 0
+    },
+    {
+      "type": "Ban sans demande de blacklist",
+      "Blacklisté": 1,
+      "Faits avérés mais mineurs": 0,
+      "Motif du signalement trop faible": 5,
+      "Preuves insuffisantes": 7,
+      "Refuse: il a dit": 0,
+      "Signalement non pertinent": 16,
+      "Signalement retiré": 35,
+      "Temps de réponse trop long": 0
+    }
+  ],
+  "stacked": true
+}

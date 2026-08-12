@@ -1,0 +1,128 @@
+{
+  "id": "top_emetteurs",
+  "title": "Top 15 des émetteurs de reports",
+  "description": "Utilisateurs ayant émis le plus de reports, avec le pourcentage aboutissant à un blacklist. Un taux faible sur un gros volume indique des signalements peu pertinents.",
+  "chartType": "bar",
+  "xKey": "emetteur",
+  "series": [
+    {
+      "key": "total",
+      "label": "Reports émis",
+      "color": "var(--chart-1)"
+    }
+  ],
+  "chartConfig": {
+    "total": {
+      "label": "Reports émis",
+      "color": "var(--chart-1)"
+    }
+  },
+  "data": [
+    {
+      "emetteur": "DraftBot",
+      "emetteurId": "318312854816161792",
+      "total": 2228,
+      "blacklists": 364,
+      "tauxAcceptation": 16.3
+    },
+    {
+      "emetteur": "RaidProtect",
+      "emetteurId": "466578580449525760",
+      "total": 310,
+      "blacklists": 13,
+      "tauxAcceptation": 4.2
+    },
+    {
+      "emetteur": "iHorizon",
+      "emetteurId": "945202900907470899",
+      "total": 261,
+      "blacklists": 3,
+      "tauxAcceptation": 1.1
+    },
+    {
+      "emetteur": "Carl-bot",
+      "emetteurId": "235148962103951360",
+      "total": 162,
+      "blacklists": 10,
+      "tauxAcceptation": 6.2
+    },
+    {
+      "emetteur": "deleted_user_733c139bc09c",
+      "emetteurId": "1399863641108643981",
+      "total": 131,
+      "blacklists": 0,
+      "tauxAcceptation": 0.0
+    },
+    {
+      "emetteur": "Tenma",
+      "emetteurId": "1021873762293010432",
+      "total": 129,
+      "blacklists": 2,
+      "tauxAcceptation": 1.6
+    },
+    {
+      "emetteur": "trust shoto 2",
+      "emetteurId": "1345383502010519562",
+      "total": 125,
+      "blacklists": 5,
+      "tauxAcceptation": 4.0
+    },
+    {
+      "emetteur": "Thom Thomas",
+      "emetteurId": "1372538783827759104",
+      "total": 107,
+      "blacklists": 93,
+      "tauxAcceptation": 86.9
+    },
+    {
+      "emetteur": "Jules™",
+      "emetteurId": "1164597199594852395",
+      "total": 90,
+      "blacklists": 12,
+      "tauxAcceptation": 13.3
+    },
+    {
+      "emetteur": "Dyno",
+      "emetteurId": "155149108183695360",
+      "total": 82,
+      "blacklists": 11,
+      "tauxAcceptation": 13.4
+    },
+    {
+      "emetteur": "Trustshoto 2",
+      "emetteurId": "1450854730673688596",
+      "total": 78,
+      "blacklists": 13,
+      "tauxAcceptation": 16.7
+    },
+    {
+      "emetteur": "CyberCompanion",
+      "emetteurId": "822815101979328562",
+      "total": 76,
+      "blacklists": 25,
+      "tauxAcceptation": 32.9
+    },
+    {
+      "emetteur": "Phénocore",
+      "emetteurId": "360470788211736577",
+      "total": 69,
+      "blacklists": 1,
+      "tauxAcceptation": 1.4
+    },
+    {
+      "emetteur": "Beluga",
+      "emetteurId": "1270092784573091943",
+      "total": 66,
+      "blacklists": 41,
+      "tauxAcceptation": 62.1
+    },
+    {
+      "emetteur": "asuna",
+      "emetteurId": "1227333041320497204",
+      "total": 63,
+      "blacklists": 4,
+      "tauxAcceptation": 6.3
+    }
+  ],
+  "layout": "vertical"
+}

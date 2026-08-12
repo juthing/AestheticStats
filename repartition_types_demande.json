@@ -1,0 +1,49 @@
+{
+  "id": "repartition_types_demande",
+  "title": "Répartition des types de demande",
+  "description": "Part de chaque type de demande (ban avec/sans demande de blacklist, signalement, etc.) sur l'ensemble des reports.",
+  "chartType": "pie",
+  "xKey": "type",
+  "series": [
+    {
+      "key": "total",
+      "label": "Reports",
+      "color": "var(--chart-1)"
+    }
+  ],
+  "chartConfig": {
+    "total": {
+      "label": "Reports",
+      "color": "var(--chart-1)"
+    }
+  },
+  "data": [
+    {
+      "type": "Ban sans indication",
+      "total": 7518,
+      "fill": "var(--chart-1)"
+    },
+    {
+      "type": "Ban avec demande de blacklist",
+      "total": 714,
+      "fill": "var(--chart-2)"
+    },
+    {
+      "type": "Signalement direct",
+      "total": 232,
+      "fill": "var(--chart-3)"
+    },
+    {
+      "type": "Signalement",
+      "total": 157,
+      "fill": "var(--chart-4)"
+    },
+    {
+      "type": "Ban sans demande de blacklist",
+      "total": 64,
+      "fill": "var(--chart-5)"
+    }
+  ],
+  "nameKey": "type",
+  "dataKey": "total"
+}

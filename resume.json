@@ -1,0 +1,51 @@
+{
+  "id": "resume",
+  "title": "Chiffres clés",
+  "description": "Vue d'ensemble de l'activité de modération sur la période couverte.",
+  "chartType": "stats",
+  "data": [
+    {
+      "label": "Reports au total",
+      "value": 8685
+    },
+    {
+      "label": "Période couverte",
+      "value": "07/08/2025 → 12/08/2026",
+      "detail": "369 jours"
+    },
+    {
+      "label": "Moyenne par jour",
+      "value": 23.5
+    },
+    {
+      "label": "Taux de blacklist global",
+      "value": "17.7 %",
+      "detail": "1540 blacklists"
+    },
+    {
+      "label": "Serveurs signalants",
+      "value": 916
+    },
+    {
+      "label": "Cibles distinctes",
+      "value": 7295
+    },
+    {
+      "label": "Émetteurs distincts",
+      "value": 1203
+    },
+    {
+      "label": "Staffs ayant traité un report",
+      "value": 43
+    },
+    {
+      "label": "Part des 10 serveurs les plus actifs",
+      "value": "25.3 %"
+    },
+    {
+      "label": "Journée record",
+      "value": 163,
+      "detail": "2026-01-11"
+    }
+  ]
+}

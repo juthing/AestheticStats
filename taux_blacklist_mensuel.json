@@ -1,0 +1,100 @@
+{
+  "id": "taux_blacklist_mensuel",
+  "title": "Évolution du taux de blacklist",
+  "description": "Pourcentage mensuel de reports aboutissant à un blacklist. Montre si l'équipe est devenue plus stricte ou plus permissive au fil du temps.",
+  "chartType": "line",
+  "xKey": "mois",
+  "series": [
+    {
+      "key": "tauxBlacklist",
+      "label": "Taux de blacklist (%)",
+      "color": "var(--chart-4)"
+    }
+  ],
+  "chartConfig": {
+    "tauxBlacklist": {
+      "label": "Taux de blacklist (%)",
+      "color": "var(--chart-4)"
+    }
+  },
+  "data": [
+    {
+      "mois": "2025-08",
+      "total": 11,
+      "blacklists": 2,
+      "tauxBlacklist": 18.2
+    },
+    {
+      "mois": "2025-09",
+      "total": 325,
+      "blacklists": 67,
+      "tauxBlacklist": 20.6
+    },
+    {
+      "mois": "2025-10",
+      "total": 159,
+      "blacklists": 57,
+      "tauxBlacklist": 35.8
+    },
+    {
+      "mois": "2025-11",
+      "total": 254,
+      "blacklists": 59,
+      "tauxBlacklist": 23.2
+    },
+    {
+      "mois": "2025-12",
+      "total": 650,
+      "blacklists": 51,
+      "tauxBlacklist": 7.8
+    },
+    {
+      "mois": "2026-01",
+      "total": 830,
+      "blacklists": 102,
+      "tauxBlacklist": 12.3
+    },
+    {
+      "mois": "2026-02",
+      "total": 852,
+      "blacklists": 139,
+      "tauxBlacklist": 16.3
+    },
+    {
+      "mois": "2026-03",
+      "total": 925,
+      "blacklists": 166,
+      "tauxBlacklist": 17.9
+    },
+    {
+      "mois": "2026-04",
+      "total": 986,
+      "blacklists": 187,
+      "tauxBlacklist": 19.0
+    },
+    {
+      "mois": "2026-05",
+      "total": 1113,
+      "blacklists": 201,
+      "tauxBlacklist": 18.1
+    },
+    {
+      "mois": "2026-06",
+      "total": 1319,
+      "blacklists": 252,
+      "tauxBlacklist": 19.1
+    },
+    {
+      "mois": "2026-07",
+      "total": 1042,
+      "blacklists": 210,
+      "tauxBlacklist": 20.2
+    },
+    {
+      "mois": "2026-08",
+      "total": 219,
+      "blacklists": 47,
+      "tauxBlacklist": 21.5
+    }
+  ]
+}

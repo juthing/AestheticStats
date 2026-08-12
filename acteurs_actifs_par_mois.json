@@ -1,0 +1,96 @@
+{
+  "id": "acteurs_actifs_par_mois",
+  "title": "Serveurs et émetteurs actifs par mois",
+  "description": "Nombre de serveurs et d'utilisateurs distincts ayant émis au moins un report chaque mois. À comparer au volume : une hausse du volume portée par de moins en moins de serveurs traduit une concentration.",
+  "chartType": "line",
+  "xKey": "mois",
+  "series": [
+    {
+      "key": "serveurs",
+      "label": "Serveurs actifs",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "emetteurs",
+      "label": "Émetteurs actifs",
+      "color": "var(--chart-2)"
+    }
+  ],
+  "chartConfig": {
+    "serveurs": {
+      "label": "Serveurs actifs",
+      "color": "var(--chart-1)"
+    },
+    "emetteurs": {
+      "label": "Émetteurs actifs",
+      "color": "var(--chart-2)"
+    }
+  },
+  "data": [
+    {
+      "mois": "2025-08",
+      "serveurs": 2,
+      "emetteurs": 2
+    },
+    {
+      "mois": "2025-09",
+      "serveurs": 139,
+      "emetteurs": 144
+    },
+    {
+      "mois": "2025-10",
+      "serveurs": 70,
+      "emetteurs": 74
+    },
+    {
+      "mois": "2025-11",
+      "serveurs": 94,
+      "emetteurs": 95
+    },
+    {
+      "mois": "2025-12",
+      "serveurs": 148,
+      "emetteurs": 148
+    },
+    {
+      "mois": "2026-01",
+      "serveurs": 221,
+      "emetteurs": 212
+    },
+    {
+      "mois": "2026-02",
+      "serveurs": 199,
+      "emetteurs": 208
+    },
+    {
+      "mois": "2026-03",
+      "serveurs": 216,
+      "emetteurs": 214
+    },
+    {
+      "mois": "2026-04",
+      "serveurs": 223,
+      "emetteurs": 232
+    },
+    {
+      "mois": "2026-05",
+      "serveurs": 165,
+      "emetteurs": 209
+    },
+    {
+      "mois": "2026-06",
+      "serveurs": 267,
+      "emetteurs": 294
+    },
+    {
+      "mois": "2026-07",
+      "serveurs": 240,
+      "emetteurs": 260
+    },
+    {
+      "mois": "2026-08",
+      "serveurs": 81,
+      "emetteurs": 81
+    }
+  ]
+}

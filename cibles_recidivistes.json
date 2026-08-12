@@ -1,0 +1,122 @@
+{
+  "id": "cibles_recidivistes",
+  "title": "Top 15 des cibles les plus signalées",
+  "description": "Utilisateurs signalés plusieurs fois. Le champ 'serveurs' indique depuis combien de serveurs distincts ils ont été signalés : un nombre élevé traduit un problème inter-serveurs plutôt qu'un conflit local.",
+  "chartType": "bar",
+  "xKey": "cible",
+  "series": [
+    {
+      "key": "total",
+      "label": "Signalements",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "serveurs",
+      "label": "Serveurs distincts",
+      "color": "var(--chart-2)"
+    }
+  ],
+  "chartConfig": {
+    "total": {
+      "label": "Signalements",
+      "color": "var(--chart-1)"
+    },
+    "serveurs": {
+      "label": "Serveurs distincts",
+      "color": "var(--chart-2)"
+    }
+  },
+  "data": [
+    {
+      "cible": "Rafixol",
+      "cibleId": "1403660235973066802",
+      "total": 42,
+      "serveurs": 1
+    },
+    {
+      "cible": "Jules™",
+      "cibleId": "1164597199594852395",
+      "total": 36,
+      "serveurs": 4
+    },
+    {
+      "cible": "Tom",
+      "cibleId": "930447171449397269",
+      "total": 30,
+      "serveurs": 15
+    },
+    {
+      "cible": "Beluga",
+      "cibleId": "1270092784573091943",
+      "total": 25,
+      "serveurs": 11
+    },
+    {
+      "cible": "P-A",
+      "cibleId": "419969729730445312",
+      "total": 17,
+      "serveurs": 5
+    },
+    {
+      "cible": "Sandiwch de Jules",
+      "cibleId": "1207987450304266240",
+      "total": 17,
+      "serveurs": 2
+    },
+    {
+      "cible": "Lucas",
+      "cibleId": "1057705135515639859",
+      "total": 15,
+      "serveurs": 8
+    },
+    {
+      "cible": "Charline",
+      "cibleId": "693152854046670948",
+      "total": 13,
+      "serveurs": 4
+    },
+    {
+      "cible": "ᴬᴾᵀˣ q⁷ᶻ",
+      "cibleId": "1042469083888750743",
+      "total": 13,
+      "serveurs": 13
+    },
+    {
+      "cible": "Entory",
+      "cibleId": "1386007578974228590",
+      "total": 12,
+      "serveurs": 12
+    },
+    {
+      "cible": "deleted_user_57d5823aa269",
+      "cibleId": "1172553021629141025",
+      "total": 12,
+      "serveurs": 12
+    },
+    {
+      "cible": "wituz",
+      "cibleId": "1479435977163280418",
+      "total": 11,
+      "serveurs": 11
+    },
+    {
+      "cible": "y.o.ungsta25",
+      "cibleId": "1477304311280046211",
+      "total": 11,
+      "serveurs": 11
+    },
+    {
+      "cible": "Saori",
+      "cibleId": "925782525891190864",
+      "total": 10,
+      "serveurs": 2
+    },
+    {
+      "cible": "ℳℴ𝓂ℴ ❀",
+      "cibleId": "1452774954763555072",
+      "total": 10,
+      "serveurs": 1
+    }
+  ],
+  "layout": "vertical"
+}

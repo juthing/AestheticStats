@@ -1,0 +1,158 @@
+{
+  "generatedAt": "2026-08-12T20:38:13.547005+00:00",
+  "source": "/workspaces/codespaces-blank/awhale_reports.db",
+  "charts": [
+    {
+      "id": "resume",
+      "title": "Chiffres clés",
+      "description": "Vue d'ensemble de l'activité de modération sur la période couverte.",
+      "chartType": "stats",
+      "file": "resume.json",
+      "points": 10
+    },
+    {
+      "id": "reports_par_semaine",
+      "title": "Évolution des reports par semaine",
+      "description": "Nombre de reports traités chaque semaine sur toute la période couverte. Permet de repérer les pics d'activité, les périodes creuses et la tendance de fond.",
+      "chartType": "line",
+      "file": "reports_par_semaine.json",
+      "points": 53
+    },
+    {
+      "id": "reports_par_mois",
+      "title": "Volume mensuel et croissance",
+      "description": "Nombre de reports par mois. Le champ 'evolution' donne la variation en pourcentage par rapport au mois précédent (null pour le premier mois).",
+      "chartType": "bar",
+      "file": "reports_par_mois.json",
+      "points": 13
+    },
+    {
+      "id": "taux_blacklist_mensuel",
+      "title": "Évolution du taux de blacklist",
+      "description": "Pourcentage mensuel de reports aboutissant à un blacklist. Montre si l'équipe est devenue plus stricte ou plus permissive au fil du temps.",
+      "chartType": "line",
+      "file": "taux_blacklist_mensuel.json",
+      "points": 13
+    },
+    {
+      "id": "classement_staff",
+      "title": "Reports traités par membre du staff",
+      "description": "Nombre de reports traités par chaque membre du staff, du moins actif au plus actif. Les 30 reports d'avant le 03/09/2025 sont exclus : le champ Staff n'existait pas encore.",
+      "chartType": "bar",
+      "file": "classement_staff.json",
+      "points": 43
+    },
+    {
+      "id": "decisions_par_staff",
+      "title": "Répartition des décisions par membre du staff",
+      "description": "Pour chaque staff ayant traité au moins 20 reports, part de chaque décision en pourcentage de son activité. Révèle les écarts de sévérité entre modérateurs. À interpréter avec le volume total, indiqué par le champ 'total'.",
+      "chartType": "bar",
+      "file": "decisions_par_staff.json",
+      "points": 37
+    },
+    {
+      "id": "activite_staff_par_mois",
+      "title": "Activité mensuelle des 30 staffs les plus actifs",
+      "description": "Nombre de reports traités chaque mois par les principaux membres du staff. Permet de visualiser les arrivées, les départs et les variations de charge.",
+      "chartType": "area",
+      "file": "activite_staff_par_mois.json",
+      "points": 12
+    },
+    {
+      "id": "reports_par_heure",
+      "title": "Répartition horaire des reports",
+      "description": "Nombre de reports par heure de la journée, en heure française, toutes dates confondues. Met en évidence les créneaux de forte activité.",
+      "chartType": "radar",
+      "file": "reports_par_heure.json",
+      "points": 24
+    },
+    {
+      "id": "reports_par_jour_semaine",
+      "title": "Répartition par jour de la semaine",
+      "description": "Nombre de reports selon le jour de la semaine, toutes dates confondues.",
+      "chartType": "radar",
+      "file": "reports_par_jour_semaine.json",
+      "points": 7
+    },
+    {
+      "id": "repartition_decisions",
+      "title": "Répartition des décisions",
+      "description": "Part de chaque décision sur l'ensemble des reports. Utilise la colonne normalisée : les anciens codes (blacklisted, denied_ignored…) sont fusionnés avec leurs équivalents français adoptés le 14/02/2026.",
+      "chartType": "pie",
+      "file": "repartition_decisions.json",
+      "points": 8
+    },
+    {
+      "id": "repartition_types_demande",
+      "title": "Répartition des types de demande",
+      "description": "Part de chaque type de demande (ban avec/sans demande de blacklist, signalement, etc.) sur l'ensemble des reports.",
+      "chartType": "pie",
+      "file": "repartition_types_demande.json",
+      "points": 5
+    },
+    {
+      "id": "taux_blacklist_par_type",
+      "title": "Taux de blacklist selon le type de demande",
+      "description": "Pour chaque type de demande, pourcentage de reports aboutissant à un blacklist. Compare notamment les demandes explicites de blacklist à celles sans demande.",
+      "chartType": "bar",
+      "file": "taux_blacklist_par_type.json",
+      "points": 5
+    },
+    {
+      "id": "matrice_type_decision",
+      "title": "Croisement type de demande × décision",
+      "description": "Nombre de reports pour chaque combinaison type de demande / décision. Se lit en barres empilées : chaque barre est un type, découpé par décision.",
+      "chartType": "bar",
+      "file": "matrice_type_decision.json",
+      "points": 5
+    },
+    {
+      "id": "top_serveurs",
+      "title": "Top 15 des serveurs par volume de reports",
+      "description": "Serveurs d'où proviennent le plus de reports, avec leur taux de blacklist associé. Un fort volume combiné à un faible taux de blacklist peut signaler du sur-signalement.",
+      "chartType": "bar",
+      "file": "top_serveurs.json",
+      "points": 15
+    },
+    {
+      "id": "top_emetteurs",
+      "title": "Top 15 des émetteurs de reports",
+      "description": "Utilisateurs ayant émis le plus de reports, avec le pourcentage aboutissant à un blacklist. Un taux faible sur un gros volume indique des signalements peu pertinents.",
+      "chartType": "bar",
+      "file": "top_emetteurs.json",
+      "points": 15
+    },
+    {
+      "id": "cibles_recidivistes",
+      "title": "Top 15 des cibles les plus signalées",
+      "description": "Utilisateurs signalés plusieurs fois. Le champ 'serveurs' indique depuis combien de serveurs distincts ils ont été signalés : un nombre élevé traduit un problème inter-serveurs plutôt qu'un conflit local.",
+      "chartType": "bar",
+      "file": "cibles_recidivistes.json",
+      "points": 15
+    },
+    {
+      "id": "acteurs_actifs_par_mois",
+      "title": "Serveurs et émetteurs actifs par mois",
+      "description": "Nombre de serveurs et d'utilisateurs distincts ayant émis au moins un report chaque mois. À comparer au volume : une hausse du volume portée par de moins en moins de serveurs traduit une concentration.",
+      "chartType": "line",
+      "file": "acteurs_actifs_par_mois.json",
+      "points": 13
+    },
+    {
+      "id": "impact_commentaire",
+      "title": "Effet du commentaire sur l'issue du report",
+      "description": "Taux de blacklist selon que le report comporte ou non un commentaire. Un écart marqué justifie d'inciter les émetteurs à documenter leurs signalements.",
+      "chartType": "bar",
+      "file": "impact_commentaire.json",
+      "points": 2
+    },
+    {
+      "id": "completude_donnees",
+      "title": "Complétude des champs",
+      "description": "Pourcentage de reports pour lesquels chaque champ est réellement renseigné (hors valeurs vides et placeholders type « Aucun commentaire fourni »). Indique la fiabilité des analyses qui s'appuient sur ces champs.",
+      "chartType": "bar",
+      "file": "completude_donnees.json",
+      "points": 4
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "taux_blacklist_par_type",
+  "title": "Taux de blacklist selon le type de demande",
+  "description": "Pour chaque type de demande, pourcentage de reports aboutissant à un blacklist. Compare notamment les demandes explicites de blacklist à celles sans demande.",
+  "chartType": "bar",
+  "xKey": "type",
+  "series": [
+    {
+      "key": "tauxBlacklist",
+      "label": "Taux de blacklist (%)",
+      "color": "var(--chart-4)"
+    }
+  ],
+  "chartConfig": {
+    "tauxBlacklist": {
+      "label": "Taux de blacklist (%)",
+      "color": "var(--chart-4)"
+    }
+  },
+  "data": [
+    {
+      "type": "Ban sans indication",
+      "total": 7518,
+      "blacklists": 907,
+      "tauxBlacklist": 12.1
+    },
+    {
+      "type": "Ban avec demande de blacklist",
+      "total": 714,
+      "blacklists": 476,
+      "tauxBlacklist": 66.7
+    },
+    {
+      "type": "Signalement direct",
+      "total": 232,
+      "blacklists": 102,
+      "tauxBlacklist": 44.0
+    },
+    {
+      "type": "Signalement",
+      "total": 157,
+      "blacklists": 54,
+      "tauxBlacklist": 34.4
+    },
+    {
+      "type": "Ban sans demande de blacklist",
+      "total": 64,
+      "blacklists": 1,
+      "tauxBlacklist": 1.6
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "top_serveurs",
+  "title": "Top 15 des serveurs par volume de reports",
+  "description": "Serveurs d'où proviennent le plus de reports, avec leur taux de blacklist associé. Un fort volume combiné à un faible taux de blacklist peut signaler du sur-signalement.",
+  "chartType": "bar",
+  "xKey": "serveur",
+  "series": [
+    {
+      "key": "total",
+      "label": "Reports",
+      "color": "var(--chart-1)"
+    }
+  ],
+  "chartConfig": {
+    "total": {
+      "label": "Reports",
+      "color": "var(--chart-1)"
+    }
+  },
+  "data": [
+    {
+      "serveur": "1441042171128971286",
+      "total": 638,
+      "blacklists": 176,
+      "tauxBlacklist": 27.6
+    },
+    {
+      "serveur": "1214339679466561646",
+      "total": 369,
+      "blacklists": 5,
+      "tauxBlacklist": 1.4
+    },
+    {
+      "serveur": "1202018713944199279",
+      "total": 213,
+      "blacklists": 58,
+      "tauxBlacklist": 27.2
+    },
+    {
+      "serveur": "1341086164500742144",
+      "total": 179,
+      "blacklists": 39,
+      "tauxBlacklist": 21.8
+    },
+    {
+      "serveur": "863397879182524426",
+      "total": 159,
+      "blacklists": 15,
+      "tauxBlacklist": 9.4
+    },
+    {
+      "serveur": "961950692879253555",
+      "total": 157,
+      "blacklists": 40,
+      "tauxBlacklist": 25.5
+    },
+    {
+      "serveur": "1339577663173689367",
+      "total": 131,
+      "blacklists": 0,
+      "tauxBlacklist": 0.0
+    },
+    {
+      "serveur": "1405304510833889370",
+      "total": 119,
+      "blacklists": 8,
+      "tauxBlacklist": 6.7
+    },
+    {
+      "serveur": "1286328909947994113",
+      "total": 112,
+      "blacklists": 1,
+      "tauxBlacklist": 0.9
+    },
+    {
+      "serveur": "1425105304378544140",
+      "total": 109,
+      "blacklists": 93,
+      "tauxBlacklist": 85.3
+    },
+    {
+      "serveur": "843109055610224640",
+      "total": 107,
+      "blacklists": 47,
+      "tauxBlacklist": 43.9
+    },
+    {
+      "serveur": "1227342234819756113",
+      "total": 98,
+      "blacklists": 11,
+      "tauxBlacklist": 11.2
+    },
+    {
+      "serveur": "1388201534021701715",
+      "total": 95,
+      "blacklists": 4,
+      "tauxBlacklist": 4.2
+    },
+    {
+      "serveur": "1504869593468899459",
+      "total": 84,
+      "blacklists": 16,
+      "tauxBlacklist": 19.0
+    },
+    {
+      "serveur": "1013460909064192050",
+      "total": 83,
+      "blacklists": 16,
+      "tauxBlacklist": 19.3
+    }
+  ],
+  "layout": "vertical"
+}

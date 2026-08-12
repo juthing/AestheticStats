@@ -1,0 +1,567 @@
+{
+  "id": "decisions_par_staff",
+  "title": "Répartition des décisions par membre du staff",
+  "description": "Pour chaque staff ayant traité au moins 20 reports, part de chaque décision en pourcentage de son activité. Révèle les écarts de sévérité entre modérateurs. À interpréter avec le volume total, indiqué par le champ 'total'.",
+  "chartType": "bar",
+  "xKey": "staff",
+  "series": [
+    {
+      "key": "Blacklisté",
+      "label": "Blacklisté",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "Faits avérés mais mineurs",
+      "label": "Faits avérés mais mineurs",
+      "color": "var(--chart-2)"
+    },
+    {
+      "key": "Motif du signalement trop faible",
+      "label": "Motif du signalement trop faible",
+      "color": "var(--chart-3)"
+    },
+    {
+      "key": "Preuves insuffisantes",
+      "label": "Preuves insuffisantes",
+      "color": "var(--chart-4)"
+    },
+    {
+      "key": "Refuse: il a dit",
+      "label": "Refuse: il a dit",
+      "color": "var(--chart-5)"
+    },
+    {
+      "key": "Signalement non pertinent",
+      "label": "Signalement non pertinent",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "Signalement retiré",
+      "label": "Signalement retiré",
+      "color": "var(--chart-2)"
+    },
+    {
+      "key": "Temps de réponse trop long",
+      "label": "Temps de réponse trop long",
+      "color": "var(--chart-3)"
+    }
+  ],
+  "chartConfig": {
+    "Blacklisté": {
+      "label": "Blacklisté",
+      "color": "var(--chart-1)"
+    },
+    "Faits avérés mais mineurs": {
+      "label": "Faits avérés mais mineurs",
+      "color": "var(--chart-2)"
+    },
+    "Motif du signalement trop faible": {
+      "label": "Motif du signalement trop faible",
+      "color": "var(--chart-3)"
+    },
+    "Preuves insuffisantes": {
+      "label": "Preuves insuffisantes",
+      "color": "var(--chart-4)"
+    },
+    "Refuse: il a dit": {
+      "label": "Refuse: il a dit",
+      "color": "var(--chart-5)"
+    },
+    "Signalement non pertinent": {
+      "label": "Signalement non pertinent",
+      "color": "var(--chart-1)"
+    },
+    "Signalement retiré": {
+      "label": "Signalement retiré",
+      "color": "var(--chart-2)"
+    },
+    "Temps de réponse trop long": {
+      "label": "Temps de réponse trop long",
+      "color": "var(--chart-3)"
+    }
+  },
+  "data": [
+    {
+      "staff": "Charline",
+      "staffId": "693152854046670948",
+      "total": 1065,
+      "Blacklisté": 12.8,
+      "Faits avérés mais mineurs": 0.5,
+      "Motif du signalement trop faible": 4.2,
+      "Preuves insuffisantes": 2.3,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 49.7,
+      "Signalement retiré": 30.5,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Tom",
+      "staffId": "930447171449397269",
+      "total": 870,
+      "Blacklisté": 23.0,
+      "Faits avérés mais mineurs": 1.1,
+      "Motif du signalement trop faible": 1.6,
+      "Preuves insuffisantes": 10.0,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 24.0,
+      "Signalement retiré": 40.1,
+      "Temps de réponse trop long": 0.1
+    },
+    {
+      "staff": "Beluga",
+      "staffId": "1270092784573091943",
+      "total": 858,
+      "Blacklisté": 16.0,
+      "Faits avérés mais mineurs": 0.3,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 7.1,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 15.4,
+      "Signalement retiré": 61.2,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Thom Thomas",
+      "staffId": "1372538783827759104",
+      "total": 629,
+      "Blacklisté": 7.3,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 2.2,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 12.6,
+      "Signalement retiré": 77.9,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Lucas",
+      "staffId": "1057705135515639859",
+      "total": 580,
+      "Blacklisté": 18.3,
+      "Faits avérés mais mineurs": 0.7,
+      "Motif du signalement trop faible": 4.1,
+      "Preuves insuffisantes": 4.5,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 39.5,
+      "Signalement retiré": 32.9,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Thomas",
+      "staffId": "1224018111825449031",
+      "total": 563,
+      "Blacklisté": 17.1,
+      "Faits avérés mais mineurs": 2.5,
+      "Motif du signalement trop faible": 1.4,
+      "Preuves insuffisantes": 20.4,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 3.2,
+      "Signalement retiré": 55.4,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "P-A",
+      "staffId": "419969729730445312",
+      "total": 413,
+      "Blacklisté": 9.9,
+      "Faits avérés mais mineurs": 1.0,
+      "Motif du signalement trop faible": 2.4,
+      "Preuves insuffisantes": 2.9,
+      "Refuse: il a dit": 0.2,
+      "Signalement non pertinent": 40.0,
+      "Signalement retiré": 43.3,
+      "Temps de réponse trop long": 0.2
+    },
+    {
+      "staff": "M E L",
+      "staffId": "1345542663675314247",
+      "total": 389,
+      "Blacklisté": 23.1,
+      "Faits avérés mais mineurs": 1.0,
+      "Motif du signalement trop faible": 1.8,
+      "Preuves insuffisantes": 21.9,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 14.7,
+      "Signalement retiré": 37.3,
+      "Temps de réponse trop long": 0.3
+    },
+    {
+      "staff": "Samuel",
+      "staffId": "590741386018422784",
+      "total": 266,
+      "Blacklisté": 10.5,
+      "Faits avérés mais mineurs": 0.4,
+      "Motif du signalement trop faible": 9.4,
+      "Preuves insuffisantes": 19.2,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 35.3,
+      "Signalement retiré": 25.2,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Mathéo",
+      "staffId": "872039839099400242",
+      "total": 257,
+      "Blacklisté": 14.4,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 21.0,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 17.1,
+      "Signalement retiré": 47.5,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Lumine",
+      "staffId": "321216585098461184",
+      "total": 248,
+      "Blacklisté": 29.0,
+      "Faits avérés mais mineurs": 1.2,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 23.0,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 22.6,
+      "Signalement retiré": 24.2,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "deleted_user_f9f668f01a2a",
+      "staffId": "1385629707365646398",
+      "total": 236,
+      "Blacklisté": 14.8,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.4,
+      "Preuves insuffisantes": 3.0,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 8.1,
+      "Signalement retiré": 73.7,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Lolo",
+      "staffId": "771709679738814494",
+      "total": 177,
+      "Blacklisté": 15.3,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 1.1,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 1.1,
+      "Signalement retiré": 82.5,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "RitonDJ",
+      "staffId": "394411052093145088",
+      "total": 156,
+      "Blacklisté": 25.6,
+      "Faits avérés mais mineurs": 0.6,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 8.3,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 7.1,
+      "Signalement retiré": 58.3,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Kérian",
+      "staffId": "454342163443220501",
+      "total": 150,
+      "Blacklisté": 40.7,
+      "Faits avérés mais mineurs": 2.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 2.0,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 44.7,
+      "Signalement retiré": 10.7,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Nyphiosy 𓅃",
+      "staffId": "1039861443815809024",
+      "total": 146,
+      "Blacklisté": 20.5,
+      "Faits avérés mais mineurs": 4.1,
+      "Motif du signalement trop faible": 0.7,
+      "Preuves insuffisantes": 20.5,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 4.1,
+      "Signalement retiré": 50.0,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "*Lenny",
+      "staffId": "1175873390670774364",
+      "total": 144,
+      "Blacklisté": 12.5,
+      "Faits avérés mais mineurs": 0.7,
+      "Motif du signalement trop faible": 14.6,
+      "Preuves insuffisantes": 11.8,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 41.7,
+      "Signalement retiré": 18.1,
+      "Temps de réponse trop long": 0.7
+    },
+    {
+      "staff": "Prophecy",
+      "staffId": "211483050008248321",
+      "total": 140,
+      "Blacklisté": 22.1,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 7.9,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 44.3,
+      "Signalement retiré": 25.7,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Valetino rossi",
+      "staffId": "788129401715425291",
+      "total": 113,
+      "Blacklisté": 16.8,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.9,
+      "Preuves insuffisantes": 13.3,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 23.0,
+      "Signalement retiré": 46.0,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Jules™",
+      "staffId": "1164597199594852395",
+      "total": 112,
+      "Blacklisté": 14.3,
+      "Faits avérés mais mineurs": 2.7,
+      "Motif du signalement trop faible": 0.9,
+      "Preuves insuffisantes": 4.5,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 55.4,
+      "Signalement retiré": 22.3,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Sir. Rhea ♄",
+      "staffId": "1077229753179832370",
+      "total": 111,
+      "Blacklisté": 22.5,
+      "Faits avérés mais mineurs": 2.7,
+      "Motif du signalement trop faible": 0.9,
+      "Preuves insuffisantes": 23.4,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 16.2,
+      "Signalement retiré": 34.2,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Alex",
+      "staffId": "1025817336835493942",
+      "total": 103,
+      "Blacklisté": 1.9,
+      "Faits avérés mais mineurs": 1.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 14.6,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 0.0,
+      "Signalement retiré": 82.5,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Tijani",
+      "staffId": "1437502277979082775",
+      "total": 97,
+      "Blacklisté": 9.3,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 4.1,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 1.0,
+      "Signalement retiré": 85.6,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Elias",
+      "staffId": "794947122960793600",
+      "total": 89,
+      "Blacklisté": 64.0,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 10.1,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 14.6,
+      "Signalement retiré": 11.2,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Lyasthénie",
+      "staffId": "871812004262846586",
+      "total": 89,
+      "Blacklisté": 22.5,
+      "Faits avérés mais mineurs": 3.4,
+      "Motif du signalement trop faible": 1.1,
+      "Preuves insuffisantes": 7.9,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 23.6,
+      "Signalement retiré": 41.6,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "taj",
+      "staffId": "330173199532949506",
+      "total": 77,
+      "Blacklisté": 18.2,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 3.9,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 16.9,
+      "Signalement retiré": 61.0,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Vincent",
+      "staffId": "203941598893965312",
+      "total": 74,
+      "Blacklisté": 27.0,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 6.8,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 63.5,
+      "Signalement retiré": 2.7,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "*Lenzo",
+      "staffId": "912382941143916544",
+      "total": 69,
+      "Blacklisté": 20.3,
+      "Faits avérés mais mineurs": 8.7,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 10.1,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 18.8,
+      "Signalement retiré": 24.6,
+      "Temps de réponse trop long": 17.4
+    },
+    {
+      "staff": "theunforgiven",
+      "staffId": "1029075667511418962",
+      "total": 56,
+      "Blacklisté": 12.5,
+      "Faits avérés mais mineurs": 3.6,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 19.6,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 8.9,
+      "Signalement retiré": 55.4,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "RazoX",
+      "staffId": "1279454403954212955",
+      "total": 51,
+      "Blacklisté": 17.6,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 2.0,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 7.8,
+      "Signalement retiré": 72.5,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Gladou",
+      "staffId": "707017911075864617",
+      "total": 50,
+      "Blacklisté": 10.0,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 4.0,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 86.0,
+      "Signalement retiré": 0.0,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "! Morgane",
+      "staffId": "993485179039527002",
+      "total": 47,
+      "Blacklisté": 31.9,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 2.1,
+      "Preuves insuffisantes": 19.1,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 19.1,
+      "Signalement retiré": 27.7,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": ">_ Nomad",
+      "staffId": "1350634749047210006",
+      "total": 42,
+      "Blacklisté": 35.7,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 9.5,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 0.0,
+      "Signalement retiré": 54.8,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Hodaifa",
+      "staffId": "922117214100942909",
+      "total": 39,
+      "Blacklisté": 33.3,
+      "Faits avérés mais mineurs": 12.8,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 20.5,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 7.7,
+      "Signalement retiré": 25.6,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "❀ 𝒟𝑜𝓂𝒾 ❀",
+      "staffId": "409367156334002187",
+      "total": 36,
+      "Blacklisté": 8.3,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 22.2,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 55.6,
+      "Signalement retiré": 13.9,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "Claire",
+      "staffId": "579736564641300527",
+      "total": 29,
+      "Blacklisté": 27.6,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 0.0,
+      "Preuves insuffisantes": 13.8,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 48.3,
+      "Signalement retiré": 10.3,
+      "Temps de réponse trop long": 0.0
+    },
+    {
+      "staff": "𝐃𝐲𝐙𝐨𝐫𝐢𝐨",
+      "staffId": "915703089099587644",
+      "total": 22,
+      "Blacklisté": 59.1,
+      "Faits avérés mais mineurs": 0.0,
+      "Motif du signalement trop faible": 4.5,
+      "Preuves insuffisantes": 0.0,
+      "Refuse: il a dit": 0.0,
+      "Signalement non pertinent": 13.6,
+      "Signalement retiré": 22.7,
+      "Temps de réponse trop long": 0.0
+    }
+  ],
+  "stacked": true
+}

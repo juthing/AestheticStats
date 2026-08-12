@@ -1,0 +1,680 @@
+{
+  "id": "activite_staff_par_mois",
+  "title": "Activité mensuelle des 30 staffs les plus actifs",
+  "description": "Nombre de reports traités chaque mois par les principaux membres du staff. Permet de visualiser les arrivées, les départs et les variations de charge.",
+  "chartType": "area",
+  "xKey": "mois",
+  "series": [
+    {
+      "key": "Charline",
+      "label": "Charline",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "Tom",
+      "label": "Tom",
+      "color": "var(--chart-2)"
+    },
+    {
+      "key": "Beluga",
+      "label": "Beluga",
+      "color": "var(--chart-3)"
+    },
+    {
+      "key": "Thom Thomas",
+      "label": "Thom Thomas",
+      "color": "var(--chart-4)"
+    },
+    {
+      "key": "Lucas",
+      "label": "Lucas",
+      "color": "var(--chart-5)"
+    },
+    {
+      "key": "Thomas",
+      "label": "Thomas",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "P-A",
+      "label": "P-A",
+      "color": "var(--chart-2)"
+    },
+    {
+      "key": "M E L",
+      "label": "M E L",
+      "color": "var(--chart-3)"
+    },
+    {
+      "key": "Samuel",
+      "label": "Samuel",
+      "color": "var(--chart-4)"
+    },
+    {
+      "key": "Mathéo",
+      "label": "Mathéo",
+      "color": "var(--chart-5)"
+    },
+    {
+      "key": "Lumine",
+      "label": "Lumine",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "deleted_user_f9f668f01a2a",
+      "label": "deleted_user_f9f668f01a2a",
+      "color": "var(--chart-2)"
+    },
+    {
+      "key": "Lolo",
+      "label": "Lolo",
+      "color": "var(--chart-3)"
+    },
+    {
+      "key": "RitonDJ",
+      "label": "RitonDJ",
+      "color": "var(--chart-4)"
+    },
+    {
+      "key": "Kérian",
+      "label": "Kérian",
+      "color": "var(--chart-5)"
+    },
+    {
+      "key": "Nyphiosy 𓅃",
+      "label": "Nyphiosy 𓅃",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "*Lenny",
+      "label": "*Lenny",
+      "color": "var(--chart-2)"
+    },
+    {
+      "key": "Prophecy",
+      "label": "Prophecy",
+      "color": "var(--chart-3)"
+    },
+    {
+      "key": "Valetino rossi",
+      "label": "Valetino rossi",
+      "color": "var(--chart-4)"
+    },
+    {
+      "key": "Jules™",
+      "label": "Jules™",
+      "color": "var(--chart-5)"
+    },
+    {
+      "key": "Sir. Rhea ♄",
+      "label": "Sir. Rhea ♄",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "Alex",
+      "label": "Alex",
+      "color": "var(--chart-2)"
+    },
+    {
+      "key": "Tijani",
+      "label": "Tijani",
+      "color": "var(--chart-3)"
+    },
+    {
+      "key": "Elias",
+      "label": "Elias",
+      "color": "var(--chart-4)"
+    },
+    {
+      "key": "Lyasthénie",
+      "label": "Lyasthénie",
+      "color": "var(--chart-5)"
+    },
+    {
+      "key": "taj",
+      "label": "taj",
+      "color": "var(--chart-1)"
+    },
+    {
+      "key": "Vincent",
+      "label": "Vincent",
+      "color": "var(--chart-2)"
+    },
+    {
+      "key": "*Lenzo",
+      "label": "*Lenzo",
+      "color": "var(--chart-3)"
+    },
+    {
+      "key": "theunforgiven",
+      "label": "theunforgiven",
+      "color": "var(--chart-4)"
+    },
+    {
+      "key": "RazoX",
+      "label": "RazoX",
+      "color": "var(--chart-5)"
+    }
+  ],
+  "chartConfig": {
+    "Charline": {
+      "label": "Charline",
+      "color": "var(--chart-1)"
+    },
+    "Tom": {
+      "label": "Tom",
+      "color": "var(--chart-2)"
+    },
+    "Beluga": {
+      "label": "Beluga",
+      "color": "var(--chart-3)"
+    },
+    "Thom Thomas": {
+      "label": "Thom Thomas",
+      "color": "var(--chart-4)"
+    },
+    "Lucas": {
+      "label": "Lucas",
+      "color": "var(--chart-5)"
+    },
+    "Thomas": {
+      "label": "Thomas",
+      "color": "var(--chart-1)"
+    },
+    "P-A": {
+      "label": "P-A",
+      "color": "var(--chart-2)"
+    },
+    "M E L": {
+      "label": "M E L",
+      "color": "var(--chart-3)"
+    },
+    "Samuel": {
+      "label": "Samuel",
+      "color": "var(--chart-4)"
+    },
+    "Mathéo": {
+      "label": "Mathéo",
+      "color": "var(--chart-5)"
+    },
+    "Lumine": {
+      "label": "Lumine",
+      "color": "var(--chart-1)"
+    },
+    "deleted_user_f9f668f01a2a": {
+      "label": "deleted_user_f9f668f01a2a",
+      "color": "var(--chart-2)"
+    },
+    "Lolo": {
+      "label": "Lolo",
+      "color": "var(--chart-3)"
+    },
+    "RitonDJ": {
+      "label": "RitonDJ",
+      "color": "var(--chart-4)"
+    },
+    "Kérian": {
+      "label": "Kérian",
+      "color": "var(--chart-5)"
+    },
+    "Nyphiosy 𓅃": {
+      "label": "Nyphiosy 𓅃",
+      "color": "var(--chart-1)"
+    },
+    "*Lenny": {
+      "label": "*Lenny",
+      "color": "var(--chart-2)"
+    },
+    "Prophecy": {
+      "label": "Prophecy",
+      "color": "var(--chart-3)"
+    },
+    "Valetino rossi": {
+      "label": "Valetino rossi",
+      "color": "var(--chart-4)"
+    },
+    "Jules™": {
+      "label": "Jules™",
+      "color": "var(--chart-5)"
+    },
+    "Sir. Rhea ♄": {
+      "label": "Sir. Rhea ♄",
+      "color": "var(--chart-1)"
+    },
+    "Alex": {
+      "label": "Alex",
+      "color": "var(--chart-2)"
+    },
+    "Tijani": {
+      "label": "Tijani",
+      "color": "var(--chart-3)"
+    },
+    "Elias": {
+      "label": "Elias",
+      "color": "var(--chart-4)"
+    },
+    "Lyasthénie": {
+      "label": "Lyasthénie",
+      "color": "var(--chart-5)"
+    },
+    "taj": {
+      "label": "taj",
+      "color": "var(--chart-1)"
+    },
+    "Vincent": {
+      "label": "Vincent",
+      "color": "var(--chart-2)"
+    },
+    "*Lenzo": {
+      "label": "*Lenzo",
+      "color": "var(--chart-3)"
+    },
+    "theunforgiven": {
+      "label": "theunforgiven",
+      "color": "var(--chart-4)"
+    },
+    "RazoX": {
+      "label": "RazoX",
+      "color": "var(--chart-5)"
+    }
+  },
+  "data": [
+    {
+      "mois": "2025-09",
+      "Charline": 15,
+      "Tom": 0,
+      "Beluga": 139,
+      "Thom Thomas": 0,
+      "Lucas": 0,
+      "Thomas": 0,
+      "P-A": 4,
+      "M E L": 0,
+      "Samuel": 0,
+      "Mathéo": 6,
+      "Lumine": 0,
+      "deleted_user_f9f668f01a2a": 0,
+      "Lolo": 0,
+      "RitonDJ": 0,
+      "Kérian": 0,
+      "Nyphiosy 𓅃": 0,
+      "*Lenny": 0,
+      "Prophecy": 0,
+      "Valetino rossi": 0,
+      "Jules™": 0,
+      "Sir. Rhea ♄": 0,
+      "Alex": 0,
+      "Tijani": 0,
+      "Elias": 15,
+      "Lyasthénie": 0,
+      "taj": 0,
+      "Vincent": 62,
+      "*Lenzo": 0,
+      "theunforgiven": 0,
+      "RazoX": 0
+    },
+    {
+      "mois": "2025-10",
+      "Charline": 0,
+      "Tom": 0,
+      "Beluga": 57,
+      "Thom Thomas": 0,
+      "Lucas": 0,
+      "Thomas": 0,
+      "P-A": 0,
+      "M E L": 0,
+      "Samuel": 0,
+      "Mathéo": 39,
+      "Lumine": 0,
+      "deleted_user_f9f668f01a2a": 0,
+      "Lolo": 0,
+      "RitonDJ": 0,
+      "Kérian": 1,
+      "Nyphiosy 𓅃": 0,
+      "*Lenny": 0,
+      "Prophecy": 0,
+      "Valetino rossi": 0,
+      "Jules™": 2,
+      "Sir. Rhea ♄": 0,
+      "Alex": 0,
+      "Tijani": 0,
+      "Elias": 48,
+      "Lyasthénie": 0,
+      "taj": 0,
+      "Vincent": 12,
+      "*Lenzo": 0,
+      "theunforgiven": 0,
+      "RazoX": 0
+    },
+    {
+      "mois": "2025-11",
+      "Charline": 0,
+      "Tom": 0,
+      "Beluga": 26,
+      "Thom Thomas": 58,
+      "Lucas": 0,
+      "Thomas": 0,
+      "P-A": 4,
+      "M E L": 0,
+      "Samuel": 0,
+      "Mathéo": 139,
+      "Lumine": 0,
+      "deleted_user_f9f668f01a2a": 0,
+      "Lolo": 0,
+      "RitonDJ": 0,
+      "Kérian": 0,
+      "Nyphiosy 𓅃": 0,
+      "*Lenny": 0,
+      "Prophecy": 0,
+      "Valetino rossi": 0,
+      "Jules™": 8,
+      "Sir. Rhea ♄": 0,
+      "Alex": 0,
+      "Tijani": 0,
+      "Elias": 19,
+      "Lyasthénie": 0,
+      "taj": 0,
+      "Vincent": 0,
+      "*Lenzo": 0,
+      "theunforgiven": 0,
+      "RazoX": 0
+    },
+    {
+      "mois": "2025-12",
+      "Charline": 0,
+      "Tom": 0,
+      "Beluga": 275,
+      "Thom Thomas": 253,
+      "Lucas": 0,
+      "Thomas": 0,
+      "P-A": 0,
+      "M E L": 0,
+      "Samuel": 0,
+      "Mathéo": 58,
+      "Lumine": 0,
+      "deleted_user_f9f668f01a2a": 0,
+      "Lolo": 41,
+      "RitonDJ": 0,
+      "Kérian": 0,
+      "Nyphiosy 𓅃": 0,
+      "*Lenny": 0,
+      "Prophecy": 0,
+      "Valetino rossi": 14,
+      "Jules™": 0,
+      "Sir. Rhea ♄": 0,
+      "Alex": 0,
+      "Tijani": 0,
+      "Elias": 3,
+      "Lyasthénie": 0,
+      "taj": 0,
+      "Vincent": 0,
+      "*Lenzo": 0,
+      "theunforgiven": 0,
+      "RazoX": 0
+    },
+    {
+      "mois": "2026-01",
+      "Charline": 0,
+      "Tom": 0,
+      "Beluga": 95,
+      "Thom Thomas": 205,
+      "Lucas": 0,
+      "Thomas": 0,
+      "P-A": 147,
+      "M E L": 0,
+      "Samuel": 0,
+      "Mathéo": 11,
+      "Lumine": 0,
+      "deleted_user_f9f668f01a2a": 0,
+      "Lolo": 135,
+      "RitonDJ": 0,
+      "Kérian": 0,
+      "Nyphiosy 𓅃": 0,
+      "*Lenny": 0,
+      "Prophecy": 0,
+      "Valetino rossi": 32,
+      "Jules™": 4,
+      "Sir. Rhea ♄": 0,
+      "Alex": 0,
+      "Tijani": 97,
+      "Elias": 4,
+      "Lyasthénie": 0,
+      "taj": 31,
+      "Vincent": 0,
+      "*Lenzo": 0,
+      "theunforgiven": 0,
+      "RazoX": 25
+    },
+    {
+      "mois": "2026-02",
+      "Charline": 0,
+      "Tom": 126,
+      "Beluga": 107,
+      "Thom Thomas": 101,
+      "Lucas": 0,
+      "Thomas": 0,
+      "P-A": 53,
+      "M E L": 0,
+      "Samuel": 91,
+      "Mathéo": 3,
+      "Lumine": 0,
+      "deleted_user_f9f668f01a2a": 113,
+      "Lolo": 1,
+      "RitonDJ": 0,
+      "Kérian": 0,
+      "Nyphiosy 𓅃": 0,
+      "*Lenny": 0,
+      "Prophecy": 0,
+      "Valetino rossi": 59,
+      "Jules™": 18,
+      "Sir. Rhea ♄": 78,
+      "Alex": 0,
+      "Tijani": 0,
+      "Elias": 0,
+      "Lyasthénie": 0,
+      "taj": 46,
+      "Vincent": 0,
+      "*Lenzo": 0,
+      "theunforgiven": 0,
+      "RazoX": 17
+    },
+    {
+      "mois": "2026-03",
+      "Charline": 11,
+      "Tom": 363,
+      "Beluga": 53,
+      "Thom Thomas": 12,
+      "Lucas": 44,
+      "Thomas": 15,
+      "P-A": 28,
+      "M E L": 0,
+      "Samuel": 95,
+      "Mathéo": 1,
+      "Lumine": 0,
+      "deleted_user_f9f668f01a2a": 123,
+      "Lolo": 0,
+      "RitonDJ": 0,
+      "Kérian": 16,
+      "Nyphiosy 𓅃": 0,
+      "*Lenny": 0,
+      "Prophecy": 7,
+      "Valetino rossi": 8,
+      "Jules™": 25,
+      "Sir. Rhea ♄": 27,
+      "Alex": 0,
+      "Tijani": 0,
+      "Elias": 0,
+      "Lyasthénie": 0,
+      "taj": 0,
+      "Vincent": 0,
+      "*Lenzo": 0,
+      "theunforgiven": 48,
+      "RazoX": 9
+    },
+    {
+      "mois": "2026-04",
+      "Charline": 265,
+      "Tom": 128,
+      "Beluga": 100,
+      "Thom Thomas": 0,
+      "Lucas": 100,
+      "Thomas": 130,
+      "P-A": 6,
+      "M E L": 0,
+      "Samuel": 59,
+      "Mathéo": 0,
+      "Lumine": 0,
+      "deleted_user_f9f668f01a2a": 0,
+      "Lolo": 0,
+      "RitonDJ": 0,
+      "Kérian": 66,
+      "Nyphiosy 𓅃": 17,
+      "*Lenny": 0,
+      "Prophecy": 41,
+      "Valetino rossi": 0,
+      "Jules™": 5,
+      "Sir. Rhea ♄": 6,
+      "Alex": 0,
+      "Tijani": 0,
+      "Elias": 0,
+      "Lyasthénie": 46,
+      "taj": 0,
+      "Vincent": 0,
+      "*Lenzo": 0,
+      "theunforgiven": 8,
+      "RazoX": 0
+    },
+    {
+      "mois": "2026-05",
+      "Charline": 284,
+      "Tom": 79,
+      "Beluga": 6,
+      "Thom Thomas": 0,
+      "Lucas": 144,
+      "Thomas": 316,
+      "P-A": 1,
+      "M E L": 57,
+      "Samuel": 11,
+      "Mathéo": 0,
+      "Lumine": 0,
+      "deleted_user_f9f668f01a2a": 0,
+      "Lolo": 0,
+      "RitonDJ": 0,
+      "Kérian": 26,
+      "Nyphiosy 𓅃": 101,
+      "*Lenny": 0,
+      "Prophecy": 33,
+      "Valetino rossi": 0,
+      "Jules™": 4,
+      "Sir. Rhea ♄": 0,
+      "Alex": 0,
+      "Tijani": 0,
+      "Elias": 0,
+      "Lyasthénie": 14,
+      "taj": 0,
+      "Vincent": 0,
+      "*Lenzo": 0,
+      "theunforgiven": 0,
+      "RazoX": 0
+    },
+    {
+      "mois": "2026-06",
+      "Charline": 399,
+      "Tom": 18,
+      "Beluga": 0,
+      "Thom Thomas": 0,
+      "Lucas": 197,
+      "Thomas": 102,
+      "P-A": 10,
+      "M E L": 118,
+      "Samuel": 8,
+      "Mathéo": 0,
+      "Lumine": 125,
+      "deleted_user_f9f668f01a2a": 0,
+      "Lolo": 0,
+      "RitonDJ": 103,
+      "Kérian": 22,
+      "Nyphiosy 𓅃": 28,
+      "*Lenny": 0,
+      "Prophecy": 50,
+      "Valetino rossi": 0,
+      "Jules™": 21,
+      "Sir. Rhea ♄": 0,
+      "Alex": 51,
+      "Tijani": 0,
+      "Elias": 0,
+      "Lyasthénie": 29,
+      "taj": 0,
+      "Vincent": 0,
+      "*Lenzo": 0,
+      "theunforgiven": 0,
+      "RazoX": 0
+    },
+    {
+      "mois": "2026-07",
+      "Charline": 91,
+      "Tom": 121,
+      "Beluga": 0,
+      "Thom Thomas": 0,
+      "Lucas": 88,
+      "Thomas": 0,
+      "P-A": 148,
+      "M E L": 184,
+      "Samuel": 0,
+      "Mathéo": 0,
+      "Lumine": 123,
+      "deleted_user_f9f668f01a2a": 0,
+      "Lolo": 0,
+      "RitonDJ": 53,
+      "Kérian": 19,
+      "Nyphiosy 𓅃": 0,
+      "*Lenny": 93,
+      "Prophecy": 9,
+      "Valetino rossi": 0,
+      "Jules™": 21,
+      "Sir. Rhea ♄": 0,
+      "Alex": 52,
+      "Tijani": 0,
+      "Elias": 0,
+      "Lyasthénie": 0,
+      "taj": 0,
+      "Vincent": 0,
+      "*Lenzo": 0,
+      "theunforgiven": 0,
+      "RazoX": 0
+    },
+    {
+      "mois": "2026-08",
+      "Charline": 0,
+      "Tom": 35,
+      "Beluga": 0,
+      "Thom Thomas": 0,
+      "Lucas": 7,
+      "Thomas": 0,
+      "P-A": 12,
+      "M E L": 30,
+      "Samuel": 2,
+      "Mathéo": 0,
+      "Lumine": 0,
+      "deleted_user_f9f668f01a2a": 0,
+      "Lolo": 0,
+      "RitonDJ": 0,
+      "Kérian": 0,
+      "Nyphiosy 𓅃": 0,
+      "*Lenny": 51,
+      "Prophecy": 0,
+      "Valetino rossi": 0,
+      "Jules™": 4,
+      "Sir. Rhea ♄": 0,
+      "Alex": 0,
+      "Tijani": 0,
+      "Elias": 0,
+      "Lyasthénie": 0,
+      "taj": 0,
+      "Vincent": 0,
+      "*Lenzo": 69,
+      "theunforgiven": 0,
+      "RazoX": 0
+    }
+  ],
+  "stacked": true
+}

@@ -7,6 +7,7 @@ import completudeDonnees from "@/stats/completude_donnees.json"
 import decisionsParStaff from "@/stats/decisions_par_staff.json"
 import impactCommentaire from "@/stats/impact_commentaire.json"
 import matriceTypeDecision from "@/stats/matrice_type_decision.json"
+import motifsBlacklist from "@/stats/motifs_blacklist.json"
 import repartitionDecisions from "@/stats/repartition_decisions.json"
 import repartitionTypesDemande from "@/stats/repartition_types_demande.json"
 import reportsParSemaine from "@/stats/reports_par_semaine.json"
@@ -63,6 +64,7 @@ const registry: Record<string, unknown> = {
   decisions_par_staff: decisionsParStaff,
   impact_commentaire: impactCommentaire,
   matrice_type_decision: matriceTypeDecision,
+  motifs_blacklist: motifsBlacklist,
   repartition_decisions: repartitionDecisions,
   repartition_types_demande: repartitionTypesDemande,
   reports_par_semaine: reportsParSemaine,

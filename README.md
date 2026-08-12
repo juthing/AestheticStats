@@ -49,7 +49,9 @@ tous les graphiques, séries et tableaux.
 Les 8 emplacements catégoriels `--chart-1` … `--chart-8` sont définis dans
 `app/globals.css`, en version claire et sombre. Ils sont attribués dans l'ordre
 et jamais recyclés : au-delà de 8 séries, les plus petites sont regroupées sous
-« Autres » (cf. `resolveSeries` dans `lib/chart-utils.ts`).
+« Autres » (cf. `resolveSeries` dans `lib/chart-utils.ts`). Les camemberts, qui
+affichent toutes leurs parts, réutilisent les mêmes teintes éclaircies au-delà
+de la 8e (`slotColor`), l'identité étant portée par la légende chiffrée.
 
 ## Logo
 

@@ -32,6 +32,7 @@ import {
 import {
   axisFormatter,
   formatNumber,
+  formatShare,
   isPercentSeries,
   resolveSeries,
   shortenTick,
@@ -105,34 +106,57 @@ export function StatChart({ chart }: { chart: StatsChart }) {
     ) : null
 
   if (chart.chartType === "pie") {
+    const total = slices.reduce((acc, slice) => acc + slice.value, 0)
+
     return (
-      <ChartContainer config={config} className="mx-auto h-[340px] w-full">
-        <PieChart>
-          <ChartTooltip content={<ChartTooltipContent nameKey="label" hideLabel />} />
-          <Pie
-            data={slices}
-            dataKey="value"
-            nameKey="label"
-            innerRadius="46%"
-            outerRadius="80%"
-            paddingAngle={2}
-            stroke="var(--background)"
-            strokeWidth={2}
-          >
-            {slices.map((slice, index) => (
-              <Cell key={slice.label} fill={slotColor(index)} />
-            ))}
-          </Pie>
-          <ChartLegend
-            content={
-              <ChartLegendContent
-                nameKey="label"
-                className="flex-wrap gap-x-4 gap-y-1.5"
+      <div className="flex flex-col items-center gap-4 md:flex-row md:gap-6">
+        <ChartContainer
+          config={config}
+          className="h-[300px] w-full md:h-[340px] md:w-1/2"
+        >
+          <PieChart>
+            <ChartTooltip
+              content={<ChartTooltipContent nameKey="label" hideLabel />}
+            />
+            <Pie
+              data={slices}
+              dataKey="value"
+              nameKey="label"
+              innerRadius="46%"
+              outerRadius="80%"
+              paddingAngle={2}
+              stroke="var(--background)"
+              strokeWidth={2}
+            >
+              {slices.map((slice, index) => (
+                <Cell key={slice.label} fill={slotColor(index)} />
+              ))}
+            </Pie>
+          </PieChart>
+        </ChartContainer>
+        {/* Legend as a list rather than a chip row: it carries the count and
+            the share, which is what the slices are actually read for. */}
+        <ul className="flex w-full flex-col gap-1 text-sm md:w-1/2">
+          {slices.map((slice, index) => (
+            <li key={slice.label} className="flex items-center gap-2">
+              <span
+                aria-hidden
+                className="size-2.5 shrink-0 rounded-[2px]"
+                style={{ backgroundColor: slotColor(index) }}
               />
-            }
-          />
-        </PieChart>
-      </ChartContainer>
+              <span className="min-w-0 flex-1 truncate" title={slice.label}>
+                {slice.label}
+              </span>
+              <span className="font-mono tabular-nums">
+                {formatNumber(slice.value)}
+              </span>
+              <span className="w-14 text-right font-mono text-muted-foreground tabular-nums">
+                {total > 0 ? `${formatShare(slice.value / total)} %` : "—"}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     )
   }
 

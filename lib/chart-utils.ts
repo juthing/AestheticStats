@@ -9,8 +9,17 @@ export const PALETTE_SIZE = 8
 export const OTHER_KEY = "Autres"
 export const OTHER_COLOR = "var(--muted-foreground)"
 
+/**
+ * Past the 8th slot the hues repeat, but each repeat is lightened so slot 9
+ * reads as a tint of slot 1 rather than the same color twice. Two tints cover
+ * 16 categories; the palette is never extended with invented hues.
+ */
 export function slotColor(index: number) {
-  return `var(--chart-${(index % PALETTE_SIZE) + 1})`
+  const hue = `var(--chart-${(index % PALETTE_SIZE) + 1})`
+  const cycle = Math.floor(index / PALETTE_SIZE)
+  if (cycle === 0) return hue
+  const strength = Math.max(30, 100 - cycle * 45)
+  return `color-mix(in oklab, ${hue} ${strength}%, var(--chart-tint))`
 }
 
 const MONTHS = [
@@ -63,6 +72,16 @@ export function shortenTick(value: string, max: number) {
 }
 
 export const numberFormatter = new Intl.NumberFormat("fr-FR")
+
+const shareFormatter = new Intl.NumberFormat("fr-FR", {
+  minimumFractionDigits: 1,
+  maximumFractionDigits: 1,
+})
+
+/** 0.169 -> "16,9" — always one decimal so the column lines up. */
+export function formatShare(ratio: number) {
+  return shareFormatter.format(ratio * 100)
+}
 
 export function formatNumber(value: unknown) {
   return typeof value === "number" ? numberFormatter.format(value) : String(value)

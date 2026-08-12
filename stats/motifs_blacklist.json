@@ -1,0 +1,74 @@
+{
+  "id": "motifs_blacklist",
+  "title": "Motifs des blacklists",
+  "description": "Répartition des motifs invoqués pour les blacklists, du plus au moins fréquent. 2208 motifs au total.",
+  "chartType": "pie",
+  "xKey": "motif",
+  "nameKey": "motif",
+  "dataKey": "total",
+  "series": [
+    {
+      "key": "total",
+      "label": "Blacklists",
+      "color": "var(--chart-1)"
+    }
+  ],
+  "data": [
+    {
+      "motif": "Publicité",
+      "total": 374
+    },
+    {
+      "motif": "Trash Talking",
+      "total": 341
+    },
+    {
+      "motif": "Scam",
+      "total": 314
+    },
+    {
+      "motif": "Raid",
+      "total": 262
+    },
+    {
+      "motif": "Démarchage sexuel",
+      "total": 199
+    },
+    {
+      "motif": "Spam",
+      "total": 194
+    },
+    {
+      "motif": "NSFW sans consentement",
+      "total": 143
+    },
+    {
+      "motif": "Hack",
+      "total": 107
+    },
+    {
+      "motif": "Troll organisé",
+      "total": 79
+    },
+    {
+      "motif": "Apologie du terrorisme",
+      "total": 60
+    },
+    {
+      "motif": "Menace de raid",
+      "total": 45
+    },
+    {
+      "motif": "Menace de mort ou incitation au suicide",
+      "total": 38
+    },
+    {
+      "motif": "Menace de dox",
+      "total": 36
+    },
+    {
+      "motif": "Menace de harcèlement",
+      "total": 16
+    }
+  ]
+}

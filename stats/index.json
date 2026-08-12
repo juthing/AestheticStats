@@ -83,6 +83,14 @@
       "points": 8
     },
     {
+      "id": "motifs_blacklist",
+      "title": "Motifs des blacklists",
+      "description": "Répartition des motifs invoqués pour les blacklists, du plus au moins fréquent. 2208 motifs au total.",
+      "chartType": "pie",
+      "file": "motifs_blacklist.json",
+      "points": 14
+    },
+    {
       "id": "repartition_types_demande",
       "title": "Répartition des types de demande",
       "description": "Part de chaque type de demande (ban avec/sans demande de blacklist, signalement, etc.) sur l'ensemble des reports.",

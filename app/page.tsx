@@ -77,7 +77,10 @@ export default function Page() {
           ))}
         </section>
 
-        <footer className="flex flex-col gap-1 pt-2 text-xs text-muted-foreground">
+        <footer className="flex flex-col gap-1 border-t pt-6 text-xs text-muted-foreground">
+          <span className="text-sm font-medium text-foreground">
+            Fait par Jules
+          </span>
           <span>
             {charts.length} graphiques · source : base de données des reports
             Aesthetic Whale.

@@ -28,7 +28,10 @@ export function InView({
           observer.disconnect()
         }
       },
-      { rootMargin: "0px 0px -10% 0px" }
+      // The trigger line sits a quarter of the viewport above its bottom edge,
+      // so a chart starts drawing once it is properly in front of the reader
+      // rather than the instant its top edge appears.
+      { rootMargin: "0px 0px -25% 0px" }
     )
 
     observer.observe(node)

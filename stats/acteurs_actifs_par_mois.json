@@ -1,7 +1,7 @@
 {
   "id": "acteurs_actifs_par_mois",
   "title": "Serveurs et émetteurs actifs par mois",
-  "description": "Nombre de serveurs et d'utilisateurs distincts ayant émis au moins un report chaque mois. À comparer au volume : une hausse du volume portée par de moins en moins de serveurs traduit une concentration.",
+  "description": "Nombre de serveurs et d'utilisateurs distincts ayant émis au moins un report dans le mois.",
   "chartType": "line",
   "xKey": "mois",
   "series": [

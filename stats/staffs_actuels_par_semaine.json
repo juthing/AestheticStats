@@ -1,7 +1,7 @@
 {
   "id": "staffs_actuels_par_semaine",
   "title": "Évolution hebdomadaire par staff",
-  "description": "Nombre de reports traités chaque semaine par chacun des staffs actuellement en poste. Les semaines sans activité apparaissent à zéro, ce qui permet de repérer les périodes d'absence. Format des semaines : année-numéro ISO.",
+  "description": "Nombre de reports traités chaque semaine par les staffs en poste, depuis le 26 janvier 2026.",
   "chartType": "line",
   "xKey": "semaine",
   "series": [
@@ -924,5 +924,6 @@
       "Claire": 2,
       "Yanis": 0
     }
-  ]
+  ],
+  "from": "2026-04"
 }

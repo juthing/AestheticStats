@@ -1,7 +1,7 @@
 {
   "id": "repartition_types_demande",
   "title": "Répartition des types de demande",
-  "description": "Part de chaque type de demande (ban avec/sans demande de blacklist, signalement, etc.) sur l'ensemble des reports.",
+  "description": "Part de chaque type de demande sur l'ensemble des reports.",
   "chartType": "pie",
   "xKey": "type",
   "series": [

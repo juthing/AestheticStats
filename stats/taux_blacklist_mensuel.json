@@ -1,14 +1,14 @@
 {
   "id": "taux_blacklist_mensuel",
   "title": "Évolution du taux de blacklist",
-  "description": "Pourcentage mensuel de reports aboutissant à un blacklist. Montre si l'équipe est devenue plus stricte ou plus permissive au fil du temps.",
-  "chartType": "line",
+  "description": "Part des reports aboutissant à un blacklist, mois par mois.",
+  "chartType": "area",
   "xKey": "mois",
   "series": [
     {
       "key": "tauxBlacklist",
       "label": "Taux de blacklist (%)",
-      "color": "var(--chart-4)"
+      "color": "var(--chart-1)"
     }
   ],
   "chartConfig": {

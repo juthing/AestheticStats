@@ -1,7 +1,7 @@
 {
   "id": "reports_par_mois",
   "title": "Volume mensuel et croissance",
-  "description": "Nombre de reports par mois, en heure française. Le champ 'evolution' donne la variation en pourcentage par rapport au mois précédent (null pour le premier mois, qui n'a pas de point de comparaison).",
+  "description": "Nombre de reports reçus chaque mois.",
   "chartType": "bar",
   "xKey": "mois",
   "series": [

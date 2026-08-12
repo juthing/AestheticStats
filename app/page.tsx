@@ -1,4 +1,5 @@
 import { ChartCard } from "@/components/chart-card"
+import { DesktopNotice } from "@/components/desktop-notice"
 import { SiteHeader } from "@/components/site-header"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
@@ -20,6 +21,8 @@ export default function Page() {
     <>
       <SiteHeader />
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10 md:px-6 md:py-14">
+        <DesktopNotice />
+
         <section className="flex flex-col gap-2">
           <Badge variant="secondary" className="w-fit">
             Aesthetic Whale
@@ -74,7 +77,10 @@ export default function Page() {
           ))}
         </section>
 
-        <footer className="flex flex-col gap-1 pt-2 text-xs text-muted-foreground">
+        <footer className="flex flex-col gap-1 border-t pt-6 text-xs text-muted-foreground">
+          <span className="text-sm font-medium text-foreground">
+            Fait par Jules
+          </span>
           <span>
             {charts.length} graphiques · source : base de données des reports
             Aesthetic Whale.

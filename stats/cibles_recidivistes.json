@@ -1,7 +1,7 @@
 {
   "id": "cibles_recidivistes",
   "title": "Top 15 des cibles les plus signalées",
-  "description": "Utilisateurs signalés plusieurs fois. Le champ 'serveurs' indique depuis combien de serveurs distincts ils ont été signalés : un nombre élevé traduit un problème inter-serveurs plutôt qu'un conflit local.",
+  "description": "Utilisateurs les plus signalés, et nombre de serveurs distincts d'où viennent ces signalements.",
   "chartType": "bar",
   "xKey": "cible",
   "series": [

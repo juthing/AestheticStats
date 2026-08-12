@@ -1,7 +1,7 @@
 {
   "id": "impact_commentaire",
   "title": "Effet du commentaire sur l'issue du report",
-  "description": "Taux de blacklist selon que le report comporte ou non un commentaire. Un écart marqué justifie d'inciter les émetteurs à documenter leurs signalements.",
+  "description": "Part des reports aboutissant à un blacklist, selon qu'ils portent ou non un commentaire.",
   "chartType": "bar",
   "xKey": "categorie",
   "series": [

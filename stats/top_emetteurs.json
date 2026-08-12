@@ -1,7 +1,7 @@
 {
   "id": "top_emetteurs",
   "title": "Top 15 des émetteurs de reports",
-  "description": "Utilisateurs ayant émis le plus de reports, avec le pourcentage aboutissant à un blacklist. Un taux faible sur un gros volume indique des signalements peu pertinents.",
+  "description": "Utilisateurs ayant émis le plus de reports, et part de leurs reports aboutissant à un blacklist.",
   "chartType": "bar",
   "xKey": "emetteur",
   "series": [

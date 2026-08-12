@@ -1,7 +1,7 @@
 {
   "id": "motifs_blacklist",
   "title": "Motifs des blacklists",
-  "description": "Répartition des motifs invoqués pour les blacklists, du plus au moins fréquent. 2208 motifs au total.",
+  "description": "Motifs invoqués lors des blacklists.",
   "chartType": "pie",
   "xKey": "motif",
   "nameKey": "motif",

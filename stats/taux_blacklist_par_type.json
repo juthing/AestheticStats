@@ -1,7 +1,7 @@
 {
   "id": "taux_blacklist_par_type",
   "title": "Taux de blacklist selon le type de demande",
-  "description": "Pour chaque type de demande, pourcentage de reports aboutissant à un blacklist. Compare notamment les demandes explicites de blacklist à celles sans demande.",
+  "description": "Part des reports aboutissant à un blacklist, selon le type de demande.",
   "chartType": "bar",
   "xKey": "type",
   "series": [

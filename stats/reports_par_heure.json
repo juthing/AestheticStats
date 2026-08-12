@@ -1,7 +1,7 @@
 {
   "id": "reports_par_heure",
   "title": "Répartition horaire des reports",
-  "description": "Nombre de reports par heure de la journée, en heure française (passage été/hiver géré automatiquement). Les 24 heures sont toujours présentes, à zéro le cas échéant, pour que le radar reste circulaire.",
+  "description": "Nombre de reports par heure de la journée, heure de Paris.",
   "chartType": "radar",
   "xKey": "heure",
   "series": [

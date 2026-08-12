@@ -1,0 +1,87 @@
+{
+  "id": "reports_par_mois",
+  "title": "Volume mensuel et croissance",
+  "description": "Nombre de reports par mois, en heure française. Le champ 'evolution' donne la variation en pourcentage par rapport au mois précédent (null pour le premier mois, qui n'a pas de point de comparaison).",
+  "chartType": "bar",
+  "xKey": "mois",
+  "series": [
+    {
+      "key": "total",
+      "label": "Reports",
+      "color": "var(--chart-1)"
+    }
+  ],
+  "chartConfig": {
+    "total": {
+      "label": "Reports",
+      "color": "var(--chart-1)"
+    }
+  },
+  "data": [
+    {
+      "mois": "2025-08",
+      "total": 11,
+      "evolution": null
+    },
+    {
+      "mois": "2025-09",
+      "total": 325,
+      "evolution": 2854.5
+    },
+    {
+      "mois": "2025-10",
+      "total": 159,
+      "evolution": -51.1
+    },
+    {
+      "mois": "2025-11",
+      "total": 254,
+      "evolution": 59.7
+    },
+    {
+      "mois": "2025-12",
+      "total": 650,
+      "evolution": 155.9
+    },
+    {
+      "mois": "2026-01",
+      "total": 830,
+      "evolution": 27.7
+    },
+    {
+      "mois": "2026-02",
+      "total": 852,
+      "evolution": 2.7
+    },
+    {
+      "mois": "2026-03",
+      "total": 925,
+      "evolution": 8.6
+    },
+    {
+      "mois": "2026-04",
+      "total": 986,
+      "evolution": 6.6
+    },
+    {
+      "mois": "2026-05",
+      "total": 1113,
+      "evolution": 12.9
+    },
+    {
+      "mois": "2026-06",
+      "total": 1319,
+      "evolution": 18.5
+    },
+    {
+      "mois": "2026-07",
+      "total": 1042,
+      "evolution": -21.0
+    },
+    {
+      "mois": "2026-08",
+      "total": 219,
+      "evolution": -79.0
+    }
+  ]
+}

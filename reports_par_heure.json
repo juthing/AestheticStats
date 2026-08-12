@@ -1,0 +1,118 @@
+{
+  "id": "reports_par_heure",
+  "title": "Répartition horaire des reports",
+  "description": "Nombre de reports par heure de la journée, en heure française (passage été/hiver géré automatiquement). Les 24 heures sont toujours présentes, à zéro le cas échéant, pour que le radar reste circulaire.",
+  "chartType": "radar",
+  "xKey": "heure",
+  "series": [
+    {
+      "key": "total",
+      "label": "Reports",
+      "color": "var(--chart-2)"
+    }
+  ],
+  "chartConfig": {
+    "total": {
+      "label": "Reports",
+      "color": "var(--chart-2)"
+    }
+  },
+  "data": [
+    {
+      "heure": "00h",
+      "total": 544
+    },
+    {
+      "heure": "01h",
+      "total": 489
+    },
+    {
+      "heure": "02h",
+      "total": 271
+    },
+    {
+      "heure": "03h",
+      "total": 105
+    },
+    {
+      "heure": "04h",
+      "total": 40
+    },
+    {
+      "heure": "05h",
+      "total": 44
+    },
+    {
+      "heure": "06h",
+      "total": 61
+    },
+    {
+      "heure": "07h",
+      "total": 77
+    },
+    {
+      "heure": "08h",
+      "total": 52
+    },
+    {
+      "heure": "09h",
+      "total": 176
+    },
+    {
+      "heure": "10h",
+      "total": 192
+    },
+    {
+      "heure": "11h",
+      "total": 302
+    },
+    {
+      "heure": "12h",
+      "total": 299
+    },
+    {
+      "heure": "13h",
+      "total": 434
+    },
+    {
+      "heure": "14h",
+      "total": 504
+    },
+    {
+      "heure": "15h",
+      "total": 620
+    },
+    {
+      "heure": "16h",
+      "total": 579
+    },
+    {
+      "heure": "17h",
+      "total": 520
+    },
+    {
+      "heure": "18h",
+      "total": 588
+    },
+    {
+      "heure": "19h",
+      "total": 513
+    },
+    {
+      "heure": "20h",
+      "total": 540
+    },
+    {
+      "heure": "21h",
+      "total": 562
+    },
+    {
+      "heure": "22h",
+      "total": 564
+    },
+    {
+      "heure": "23h",
+      "total": 609
+    }
+  ]
+}

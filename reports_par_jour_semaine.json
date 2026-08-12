@@ -1,0 +1,50 @@
+{
+  "id": "reports_par_jour_semaine",
+  "title": "Répartition par jour de la semaine",
+  "description": "Nombre de reports selon le jour de la semaine, en heure française. L'ordre va du lundi au dimanche ; les sept jours sont toujours présents, à zéro le cas échéant.",
+  "chartType": "radar",
+  "xKey": "jour",
+  "series": [
+    {
+      "key": "total",
+      "label": "Reports",
+      "color": "var(--chart-3)"
+    }
+  ],
+  "chartConfig": {
+    "total": {
+      "label": "Reports",
+      "color": "var(--chart-3)"
+    }
+  },
+  "data": [
+    {
+      "jour": "Lundi",
+      "total": 1316
+    },
+    {
+      "jour": "Mardi",
+      "total": 1136
+    },
+    {
+      "jour": "Mercredi",
+      "total": 1369
+    },
+    {
+      "jour": "Jeudi",
+      "total": 1238
+    },
+    {
+      "jour": "Vendredi",
+      "total": 1071
+    },
+    {
+      "jour": "Samedi",
+      "total": 1101
+    },
+    {
+      "jour": "Dimanche",
+      "total": 1454
+    }
+  ]
+}

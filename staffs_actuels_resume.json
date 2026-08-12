@@ -1,0 +1,166 @@
+{
+  "id": "staffs_actuels_resume",
+  "title": "Récapitulatif par staff",
+  "description": "Pour chaque staff en poste : volume total traité, taux de blacklist, dates du premier et du dernier report traité, et moyenne hebdomadaire calculée sur sa période d'activité réelle (et non sur toute la période de l'export).",
+  "chartType": "bar",
+  "xKey": "staff",
+  "series": [
+    {
+      "key": "total",
+      "label": "Reports traités",
+      "color": "var(--chart-1)"
+    }
+  ],
+  "chartConfig": {
+    "total": {
+      "label": "Reports traités",
+      "color": "var(--chart-1)"
+    }
+  },
+  "data": [
+    {
+      "staff": "Tom",
+      "staffId": "930447171449397269",
+      "total": 870,
+      "blacklists": 200,
+      "tauxBlacklist": 23.0,
+      "premierReport": "2026-02-20",
+      "dernierReport": "2026-08-12",
+      "joursActivite": 172,
+      "moyenneParSemaine": 35.41
+    },
+    {
+      "staff": "Lucas",
+      "staffId": "1057705135515639859",
+      "total": 580,
+      "blacklists": 106,
+      "tauxBlacklist": 18.3,
+      "premierReport": "2026-03-23",
+      "dernierReport": "2026-08-06",
+      "joursActivite": 136,
+      "moyenneParSemaine": 29.85
+    },
+    {
+      "staff": "P-A",
+      "staffId": "419969729730445312",
+      "total": 413,
+      "blacklists": 41,
+      "tauxBlacklist": 9.9,
+      "premierReport": "2025-09-10",
+      "dernierReport": "2026-08-11",
+      "joursActivite": 334,
+      "moyenneParSemaine": 8.66
+    },
+    {
+      "staff": "M E L",
+      "staffId": "1345542663675314247",
+      "total": 389,
+      "blacklists": 90,
+      "tauxBlacklist": 23.1,
+      "premierReport": "2026-05-16",
+      "dernierReport": "2026-08-10",
+      "joursActivite": 86,
+      "moyenneParSemaine": 31.66
+    },
+    {
+      "staff": "Samuel",
+      "staffId": "590741386018422784",
+      "total": 266,
+      "blacklists": 28,
+      "tauxBlacklist": 10.5,
+      "premierReport": "2026-02-16",
+      "dernierReport": "2026-08-01",
+      "joursActivite": 166,
+      "moyenneParSemaine": 11.22
+    },
+    {
+      "staff": "Lumine",
+      "staffId": "321216585098461184",
+      "total": 248,
+      "blacklists": 72,
+      "tauxBlacklist": 29.0,
+      "premierReport": "2026-06-15",
+      "dernierReport": "2026-07-20",
+      "joursActivite": 34,
+      "moyenneParSemaine": 51.06
+    },
+    {
+      "staff": "Kérian",
+      "staffId": "454342163443220501",
+      "total": 150,
+      "blacklists": 61,
+      "tauxBlacklist": 40.7,
+      "premierReport": "2025-10-11",
+      "dernierReport": "2026-07-11",
+      "joursActivite": 272,
+      "moyenneParSemaine": 3.86
+    },
+    {
+      "staff": "*Lenny",
+      "staffId": "1175873390670774364",
+      "total": 144,
+      "blacklists": 18,
+      "tauxBlacklist": 12.5,
+      "premierReport": "2026-07-23",
+      "dernierReport": "2026-08-12",
+      "joursActivite": 19,
+      "moyenneParSemaine": 53.05
+    },
+    {
+      "staff": "Jules™",
+      "staffId": "1164597199594852395",
+      "total": 112,
+      "blacklists": 16,
+      "tauxBlacklist": 14.3,
+      "premierReport": "2025-10-27",
+      "dernierReport": "2026-08-11",
+      "joursActivite": 287,
+      "moyenneParSemaine": 2.73
+    },
+    {
+      "staff": "*Lenzo",
+      "staffId": "912382941143916544",
+      "total": 69,
+      "blacklists": 14,
+      "tauxBlacklist": 20.3,
+      "premierReport": "2026-08-02",
+      "dernierReport": "2026-08-11",
+      "joursActivite": 9,
+      "moyenneParSemaine": 53.67
+    },
+    {
+      "staff": "Claire",
+      "staffId": "579736564641300527",
+      "total": 29,
+      "blacklists": 8,
+      "tauxBlacklist": 27.6,
+      "premierReport": "2026-07-13",
+      "dernierReport": "2026-08-10",
+      "joursActivite": 28,
+      "moyenneParSemaine": 7.25
+    },
+    {
+      "staff": "Yanis",
+      "staffId": "666592293758959629",
+      "total": 5,
+      "blacklists": 4,
+      "tauxBlacklist": 80.0,
+      "premierReport": "2026-03-17",
+      "dernierReport": "2026-06-09",
+      "joursActivite": 83,
+      "moyenneParSemaine": 0.42
+    },
+    {
+      "staff": "ID 303117…",
+      "staffId": "303117687695867917",
+      "total": 0,
+      "blacklists": 0,
+      "tauxBlacklist": 0,
+      "premierReport": null,
+      "dernierReport": null,
+      "joursActivite": 0,
+      "moyenneParSemaine": 0
+    }
+  ],
+  "layout": "vertical"
+}

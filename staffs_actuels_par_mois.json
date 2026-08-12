@@ -1,0 +1,329 @@
+{
+  "id": "staffs_actuels_par_mois",
+  "title": "Évolution mensuelle par staff",
+  "description": "Nombre de reports traités chaque mois par chacun des staffs actuellement en poste. Lecture plus lisible que l'hebdomadaire pour les tendances de fond ; s'affiche bien en aires empilées pour visualiser la charge totale de l'équipe.",
+  "chartType": "area",
+  "xKey": "mois",
+  "series": [
+    {
+      "key": "Tom",
+      "label": "Tom",
+      "color": "var(--chart-1)",
+      "staffId": "930447171449397269"
+    },
+    {
+      "key": "Lucas",
+      "label": "Lucas",
+      "color": "var(--chart-2)",
+      "staffId": "1057705135515639859"
+    },
+    {
+      "key": "P-A",
+      "label": "P-A",
+      "color": "var(--chart-3)",
+      "staffId": "419969729730445312"
+    },
+    {
+      "key": "M E L",
+      "label": "M E L",
+      "color": "var(--chart-4)",
+      "staffId": "1345542663675314247"
+    },
+    {
+      "key": "Samuel",
+      "label": "Samuel",
+      "color": "var(--chart-5)",
+      "staffId": "590741386018422784"
+    },
+    {
+      "key": "Lumine",
+      "label": "Lumine",
+      "color": "var(--chart-1)",
+      "staffId": "321216585098461184"
+    },
+    {
+      "key": "Kérian",
+      "label": "Kérian",
+      "color": "var(--chart-2)",
+      "staffId": "454342163443220501"
+    },
+    {
+      "key": "*Lenny",
+      "label": "*Lenny",
+      "color": "var(--chart-3)",
+      "staffId": "1175873390670774364"
+    },
+    {
+      "key": "Jules™",
+      "label": "Jules™",
+      "color": "var(--chart-4)",
+      "staffId": "1164597199594852395"
+    },
+    {
+      "key": "*Lenzo",
+      "label": "*Lenzo",
+      "color": "var(--chart-5)",
+      "staffId": "912382941143916544"
+    },
+    {
+      "key": "Claire",
+      "label": "Claire",
+      "color": "var(--chart-1)",
+      "staffId": "579736564641300527"
+    },
+    {
+      "key": "Yanis",
+      "label": "Yanis",
+      "color": "var(--chart-2)",
+      "staffId": "666592293758959629"
+    }
+  ],
+  "chartConfig": {
+    "Tom": {
+      "label": "Tom",
+      "color": "var(--chart-1)"
+    },
+    "Lucas": {
+      "label": "Lucas",
+      "color": "var(--chart-2)"
+    },
+    "P-A": {
+      "label": "P-A",
+      "color": "var(--chart-3)"
+    },
+    "M E L": {
+      "label": "M E L",
+      "color": "var(--chart-4)"
+    },
+    "Samuel": {
+      "label": "Samuel",
+      "color": "var(--chart-5)"
+    },
+    "Lumine": {
+      "label": "Lumine",
+      "color": "var(--chart-1)"
+    },
+    "Kérian": {
+      "label": "Kérian",
+      "color": "var(--chart-2)"
+    },
+    "*Lenny": {
+      "label": "*Lenny",
+      "color": "var(--chart-3)"
+    },
+    "Jules™": {
+      "label": "Jules™",
+      "color": "var(--chart-4)"
+    },
+    "*Lenzo": {
+      "label": "*Lenzo",
+      "color": "var(--chart-5)"
+    },
+    "Claire": {
+      "label": "Claire",
+      "color": "var(--chart-1)"
+    },
+    "Yanis": {
+      "label": "Yanis",
+      "color": "var(--chart-2)"
+    }
+  },
+  "data": [
+    {
+      "mois": "2025-08",
+      "Tom": 0,
+      "Lucas": 0,
+      "P-A": 0,
+      "M E L": 0,
+      "Samuel": 0,
+      "Lumine": 0,
+      "Kérian": 0,
+      "*Lenny": 0,
+      "Jules™": 0,
+      "*Lenzo": 0,
+      "Claire": 0,
+      "Yanis": 0
+    },
+    {
+      "mois": "2025-09",
+      "Tom": 0,
+      "Lucas": 0,
+      "P-A": 4,
+      "M E L": 0,
+      "Samuel": 0,
+      "Lumine": 0,
+      "Kérian": 0,
+      "*Lenny": 0,
+      "Jules™": 0,
+      "*Lenzo": 0,
+      "Claire": 0,
+      "Yanis": 0
+    },
+    {
+      "mois": "2025-10",
+      "Tom": 0,
+      "Lucas": 0,
+      "P-A": 0,
+      "M E L": 0,
+      "Samuel": 0,
+      "Lumine": 0,
+      "Kérian": 1,
+      "*Lenny": 0,
+      "Jules™": 2,
+      "*Lenzo": 0,
+      "Claire": 0,
+      "Yanis": 0
+    },
+    {
+      "mois": "2025-11",
+      "Tom": 0,
+      "Lucas": 0,
+      "P-A": 4,
+      "M E L": 0,
+      "Samuel": 0,
+      "Lumine": 0,
+      "Kérian": 0,
+      "*Lenny": 0,
+      "Jules™": 8,
+      "*Lenzo": 0,
+      "Claire": 0,
+      "Yanis": 0
+    },
+    {
+      "mois": "2025-12",
+      "Tom": 0,
+      "Lucas": 0,
+      "P-A": 0,
+      "M E L": 0,
+      "Samuel": 0,
+      "Lumine": 0,
+      "Kérian": 0,
+      "*Lenny": 0,
+      "Jules™": 0,
+      "*Lenzo": 0,
+      "Claire": 0,
+      "Yanis": 0
+    },
+    {
+      "mois": "2026-01",
+      "Tom": 0,
+      "Lucas": 0,
+      "P-A": 147,
+      "M E L": 0,
+      "Samuel": 0,
+      "Lumine": 0,
+      "Kérian": 0,
+      "*Lenny": 0,
+      "Jules™": 4,
+      "*Lenzo": 0,
+      "Claire": 0,
+      "Yanis": 0
+    },
+    {
+      "mois": "2026-02",
+      "Tom": 126,
+      "Lucas": 0,
+      "P-A": 53,
+      "M E L": 0,
+      "Samuel": 91,
+      "Lumine": 0,
+      "Kérian": 0,
+      "*Lenny": 0,
+      "Jules™": 18,
+      "*Lenzo": 0,
+      "Claire": 0,
+      "Yanis": 0
+    },
+    {
+      "mois": "2026-03",
+      "Tom": 363,
+      "Lucas": 44,
+      "P-A": 28,
+      "M E L": 0,
+      "Samuel": 95,
+      "Lumine": 0,
+      "Kérian": 16,
+      "*Lenny": 0,
+      "Jules™": 25,
+      "*Lenzo": 0,
+      "Claire": 0,
+      "Yanis": 1
+    },
+    {
+      "mois": "2026-04",
+      "Tom": 128,
+      "Lucas": 100,
+      "P-A": 6,
+      "M E L": 0,
+      "Samuel": 59,
+      "Lumine": 0,
+      "Kérian": 66,
+      "*Lenny": 0,
+      "Jules™": 5,
+      "*Lenzo": 0,
+      "Claire": 0,
+      "Yanis": 0
+    },
+    {
+      "mois": "2026-05",
+      "Tom": 79,
+      "Lucas": 144,
+      "P-A": 1,
+      "M E L": 57,
+      "Samuel": 11,
+      "Lumine": 0,
+      "Kérian": 26,
+      "*Lenny": 0,
+      "Jules™": 4,
+      "*Lenzo": 0,
+      "Claire": 0,
+      "Yanis": 1
+    },
+    {
+      "mois": "2026-06",
+      "Tom": 18,
+      "Lucas": 197,
+      "P-A": 10,
+      "M E L": 118,
+      "Samuel": 8,
+      "Lumine": 125,
+      "Kérian": 22,
+      "*Lenny": 0,
+      "Jules™": 21,
+      "*Lenzo": 0,
+      "Claire": 0,
+      "Yanis": 3
+    },
+    {
+      "mois": "2026-07",
+      "Tom": 121,
+      "Lucas": 88,
+      "P-A": 148,
+      "M E L": 184,
+      "Samuel": 0,
+      "Lumine": 123,
+      "Kérian": 19,
+      "*Lenny": 93,
+      "Jules™": 21,
+      "*Lenzo": 0,
+      "Claire": 20,
+      "Yanis": 0
+    },
+    {
+      "mois": "2026-08",
+      "Tom": 35,
+      "Lucas": 7,
+      "P-A": 12,
+      "M E L": 30,
+      "Samuel": 2,
+      "Lumine": 0,
+      "Kérian": 0,
+      "*Lenny": 51,
+      "Jules™": 4,
+      "*Lenzo": 69,
+      "Claire": 9,
+      "Yanis": 0
+    }
+  ],
+  "stacked": true
+}

@@ -14,7 +14,7 @@
       "id": "reports_par_semaine",
       "title": "Évolution des reports par semaine",
       "description": "Nombre de reports traités chaque semaine sur toute la période couverte. Permet de repérer les pics d'activité, les périodes creuses et la tendance de fond.",
-      "chartType": "area",
+      "chartType": "bar",
       "file": "reports_par_semaine.json",
       "points": 53
     },
@@ -37,7 +37,7 @@
     {
       "id": "classement_staff",
       "title": "Reports traités par membre du staff",
-      "description": "Nombre de reports traités par chaque membre du staff, du moins actif au plus actif. Les 30 reports d'avant le 03/09/2025 sont exclus : le champ Staff n'existait pas encore.",
+      "description": "Nombre de reports traités par chaque membre du staff, du plus actif au moins actif. Les 30 reports d'avant le 03/09/2025 sont exclus : le champ Staff n'existait pas encore.",
       "chartType": "bar",
       "file": "classement_staff.json",
       "points": 43
@@ -49,6 +49,14 @@
       "chartType": "bar",
       "file": "decisions_par_staff.json",
       "points": 37
+    },
+    {
+      "id": "activite_staff_par_mois",
+      "title": "Activité mensuelle des 30 staffs les plus actifs",
+      "description": "Nombre de reports traités chaque mois par les principaux membres du staff. Permet de visualiser les arrivées, les départs et les variations de charge.",
+      "chartType": "area",
+      "file": "activite_staff_par_mois.json",
+      "points": 12
     },
     {
       "id": "staffs_actuels_cumul",

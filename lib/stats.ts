@@ -1,5 +1,6 @@
 import indexJson from "@/stats/index.json"
 import acteursActifsParMois from "@/stats/acteurs_actifs_par_mois.json"
+import activiteStaffParMois from "@/stats/activite_staff_par_mois.json"
 import ciblesRecidivistes from "@/stats/cibles_recidivistes.json"
 import classementStaff from "@/stats/classement_staff.json"
 import completudeDonnees from "@/stats/completude_donnees.json"
@@ -60,6 +61,7 @@ export type SummaryChart = Omit<StatsChart, "data"> & { data: StatItem[] }
  */
 const registry: Record<string, unknown> = {
   acteurs_actifs_par_mois: acteursActifsParMois,
+  activite_staff_par_mois: activiteStaffParMois,
   cibles_recidivistes: ciblesRecidivistes,
   classement_staff: classementStaff,
   completude_donnees: completudeDonnees,

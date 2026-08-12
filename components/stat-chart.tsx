@@ -34,6 +34,8 @@ import {
 import {
   axisFormatter,
   formatNumber,
+  formatWeekMonth,
+  monthTicks,
   formatShare,
   isPercentSeries,
   resolveSeries,
@@ -395,6 +397,15 @@ export function StatChart({ chart }: { chart: StatsChart }) {
   const vertical =
     chart.layout === "vertical" ||
     (!timeAxis && data.length > VERTICAL_BAR_THRESHOLD)
+  // A ranking reads top-down: biggest bar first. Only single-series charts are
+  // reordered — a stack's own order (by volume) carries meaning.
+  const barData =
+    vertical && series.length === 1
+      ? [...data].sort((a, b) => Number(b[series[0].key]) - Number(a[series[0].key]))
+      : data
+  // 53 weekly bars: mark the months instead of every week.
+  const weekAxis = chart.xKey === "semaine"
+  const categoryTicks = weekAxis ? monthTicks(barData, xKey) : undefined
   const height = vertical
     ? Math.max(280, data.length * (series.length > 1 ? 30 : 24) + 80)
     : 320
@@ -426,7 +437,7 @@ export function StatChart({ chart }: { chart: StatsChart }) {
     >
       <BarChart
         accessibilityLayer
-        data={data}
+        data={barData}
         layout={vertical ? "vertical" : "horizontal"}
         margin={{ left: 4, right: 16, top: directLabels ? 20 : 4 }}
       >
@@ -461,8 +472,11 @@ export function StatChart({ chart }: { chart: StatsChart }) {
               axisLine={false}
               tickMargin={10}
               interval={0}
+              ticks={categoryTicks}
               tickFormatter={(value: string) =>
-                shortenTick(formatXAxis(value), data.length <= 6 ? 26 : 14)
+                weekAxis
+                  ? formatWeekMonth(value)
+                  : shortenTick(formatXAxis(value), data.length <= 6 ? 26 : 14)
               }
             />
             <YAxis

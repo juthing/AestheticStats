@@ -1,7 +1,7 @@
 {
   "id": "classement_staff",
   "title": "Reports traités par membre du staff",
-  "description": "Nombre de reports traités par chaque membre du staff, du moins actif au plus actif. Les 30 reports d'avant le 03/09/2025 sont exclus : le champ Staff n'existait pas encore.",
+  "description": "Nombre de reports traités par chaque membre du staff, du plus actif au moins actif. Les 30 reports d'avant le 03/09/2025 sont exclus : le champ Staff n'existait pas encore.",
   "chartType": "bar",
   "xKey": "staff",
   "series": [

@@ -93,6 +93,41 @@ export function formatWeekLong(value: string) {
   return monday ? `Semaine du ${weekLongFormat.format(monday)}` : value
 }
 
+/**
+ * Weekly bars carry 53 categories; labelling each one is noise. Ticks are
+ * pinned to the first week of each month, labelled with the month itself.
+ */
+export function monthTicks(data: ChartRow[], xKey: string, minGap = 3) {
+  const ticks: string[] = []
+  let previousMonth = ""
+  let lastTickIndex = -Infinity
+  data.forEach((row, index) => {
+    const value = String(row[xKey] ?? "")
+    const monday = weekStart(value)
+    if (!monday) return
+    const month = `${monday.getUTCFullYear()}-${monday.getUTCMonth()}`
+    if (month === previousMonth) return
+    previousMonth = month
+    // A month with only a week or two of data would collide with the next one.
+    if (index - lastTickIndex < minGap) return
+    ticks.push(value)
+    lastTickIndex = index
+  })
+  return ticks
+}
+
+const weekMonthFormat = new Intl.DateTimeFormat("fr-FR", {
+  month: "short",
+  year: "2-digit",
+  timeZone: "UTC",
+})
+
+/** "2026-32" -> "août 26" — for an axis that only marks the months. */
+export function formatWeekMonth(value: string) {
+  const monday = weekStart(value)
+  return monday ? weekMonthFormat.format(monday) : value
+}
+
 export function tooltipLabelFormatter(xKey: string | undefined) {
   if (xKey === "mois") return formatMonth
   if (xKey === "semaine") return formatWeekLong

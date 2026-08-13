@@ -51,14 +51,6 @@
       "points": 37
     },
     {
-      "id": "activite_staff_par_mois",
-      "title": "Activité mensuelle des 30 staffs les plus actifs",
-      "description": "Nombre de reports traités chaque mois par les 30 staffs les plus actifs.",
-      "chartType": "area",
-      "file": "activite_staff_par_mois.json",
-      "points": 12
-    },
-    {
       "id": "staffs_actuels_par_semaine",
       "title": "Évolution hebdomadaire par staff",
       "description": "Nombre de reports traités chaque semaine par les staffs en poste, depuis le 26 janvier 2026.",

@@ -12,6 +12,34 @@ export const PHONE_QUERY =
   "(hover: none) and (pointer: coarse) and ((max-width: 500px) or (max-height: 500px))"
 export const PORTRAIT_QUERY = "(orientation: portrait)"
 
+/** Chrome-only, still absent from TS's DOM lib as a typed member. */
+type LockableOrientation = ScreenOrientation & {
+  lock?: (orientation: string) => Promise<void>
+}
+
+/**
+ * Best-effort auto-rotate: most engines only grant `orientation.lock` inside
+ * fullscreen, and Safari/iOS exposes neither, so this silently no-ops there —
+ * the manual "turn your phone" instructions remain the real fallback.
+ */
+export async function tryLockLandscape() {
+  try {
+    if (!document.fullscreenElement) {
+      await document.documentElement.requestFullscreen?.()
+    }
+    await (screen.orientation as LockableOrientation)?.lock?.("landscape")
+  } catch {
+    // Unsupported or rejected — nothing to recover from, the gate stays up.
+  }
+}
+
+export function releaseLandscapeLock() {
+  screen.orientation?.unlock?.()
+  if (document.fullscreenElement) {
+    void document.exitFullscreen?.().catch(() => {})
+  }
+}
+
 /**
  * Subscribes to a media query without a mount flag: the server snapshot is
  * `false`, so nothing depending on it renders server-side and hydration stays

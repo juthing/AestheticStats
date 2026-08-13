@@ -1,13 +1,21 @@
 "use client"
 
+import * as React from "react"
 import { Monitor, RotateCw } from "lucide-react"
 
-import { PHONE_QUERY, PORTRAIT_QUERY, useMediaQuery } from "@/lib/phone-mode"
+import {
+  PHONE_QUERY,
+  PORTRAIT_QUERY,
+  releaseLandscapeLock,
+  tryLockLandscape,
+  useMediaQuery,
+} from "@/lib/phone-mode"
 
 /**
  * A phone held upright gets the page withheld rather than a cramped version of
  * it: several charts carry dozens of categories and are unreadable at 390px.
- * The gate lifts by itself the moment the device reports landscape.
+ * The gate lifts by itself the moment the device reports landscape — on its
+ * own if the browser grants the lock below, by hand otherwise.
  *
  * Screen size decides, not the user agent — sniffing for an iPhone would miss
  * every other phone and misfire on desktop browsers pretending to be one.
@@ -15,8 +23,15 @@ import { PHONE_QUERY, PORTRAIT_QUERY, useMediaQuery } from "@/lib/phone-mode"
 export function RotateGate() {
   const isPhone = useMediaQuery(PHONE_QUERY)
   const isPortrait = useMediaQuery(PORTRAIT_QUERY)
+  const gateUp = isPhone && isPortrait
 
-  if (!isPhone || !isPortrait) return null
+  React.useEffect(() => {
+    if (!gateUp) return
+    void tryLockLandscape()
+    return () => releaseLandscapeLock()
+  }, [gateUp])
+
+  if (!gateUp) return null
 
   return (
     <div className="fixed inset-0 z-100 flex flex-col items-center justify-center gap-6 bg-background px-8 text-center">

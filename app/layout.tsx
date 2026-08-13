@@ -19,6 +19,15 @@ export const metadata = {
     "Statistiques de modération des reports du bot Discord Aesthetic Whale.",
 }
 
+/**
+ * Without this, mobile browsers assume a 980px desktop layout and shrink the
+ * whole page to fit — the page renders at actual size instead.
+ */
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{

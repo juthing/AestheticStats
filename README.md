@@ -37,7 +37,9 @@ graphique n'est codé en dur. Quelques comportements dérivés des données :
 
 - les aires passent en dégradé jusqu'à 4 séries, en aplat translucide au-delà ;
 - les barres sur un axe `mois` / `semaine` restent horizontales, les autres
-  basculent en barres couchées passé 12 catégories ;
+  basculent en barres couchées passé 12 catégories, triées par valeur
+  décroissante quand la série est unique — un classement se lit du plus grand
+  au plus petit ;
 - les courbes de plus de 2 séries reçoivent des boutons de sélection (toutes
   affichées par défaut) ;
 - un axe hebdomadaire est libellé par mois, chaque libellé étant posé sur la
@@ -49,8 +51,24 @@ graphique n'est codé en dur. Quelques comportements dérivés des données :
 Chaque graphique n'est monté qu'en arrivant dans le champ de vision
 (`components/in-view.tsx`), ce qui déclenche son animation d'apparition au
 scroll ; la place est réservée d'avance par `chartHeight`, donc rien ne saute.
-Sur mobile, un encart signale que la lecture est plus confortable sur grand
-écran ; il se ferme et ne revient pas (`components/desktop-notice.tsx`).
+
+## Téléphone
+
+Un téléphone tenu à la verticale n'obtient pas la page mais un écran
+« Tourne ton téléphone » (`components/rotate-gate.tsx`) : à 390 px, les
+graphiques à plusieurs dizaines de catégories sont illisibles, et iOS
+n'expose aucun verrouillage d'orientation qui permettrait d'y remédier. Le
+blocage se lève de lui-même dès que l'appareil passe en paysage.
+
+En paysage, un dialogue rappelle que la lecture est plus confortable sur
+ordinateur (`components/desktop-notice.tsx`). Il s'affiche à chaque
+chargement : le fermer vaut pour la visite, pas au-delà.
+
+La détection d'un téléphone (`lib/phone-mode.ts`) ne repose pas sur la largeur
+— un téléphone en paysage fait 844 px, plus large qu'un iPad à la verticale.
+Elle combine `(hover: none) and (pointer: coarse)`, qui écarte les ordinateurs
+quelle que soit la taille de la fenêtre, et un petit côté sous 500 px, qui
+écarte les tablettes.
 
 **Pour mettre à jour les stats** : remplacer les fichiers de `stats/`. Un
 nouveau fichier doit être ajouté à `stats/index.json` **et** au registre de
@@ -67,12 +85,13 @@ Les 8 emplacements catégoriels `--chart-1` … `--chart-8` sont définis dans
 `app/globals.css`, en version claire et sombre. Les séries sont slugifiées en
 `s0`, `s1`, … à l'affichage : shadcn/ui transforme chaque clé de `ChartConfig`
 en propriété `--color-<clé>`, ce que des libellés accentués ne peuvent pas être.
-Les marks référencent donc `var(--color-s0)` comme dans la doc. Un graphique à
-série unique conserve la couleur demandée dans son JSON. Ils sont attribués dans l'ordre
-et jamais recyclés : au-delà de 8 séries, les plus petites sont regroupées sous
-« Autres » (cf. `resolveSeries` dans `lib/chart-utils.ts`). Les camemberts, qui
-affichent toutes leurs parts, réutilisent les mêmes teintes éclaircies au-delà
-de la 8e (`slotColor`), l'identité étant portée par la légende chiffrée.
+Les marks référencent donc `var(--color-s0)` comme dans la doc.
+
+Les emplacements sont attribués dans l'ordre et jamais recyclés à l'identique :
+au-delà de la 8e teinte, les suivantes reprennent les mêmes en version
+éclaircie (`slotColor`), et au-delà de 16 séries les plus petites sont
+regroupées sous « Autres » (`resolveSeries`). Un graphique à série unique
+conserve la couleur demandée dans son JSON.
 
 ## Logo
 
